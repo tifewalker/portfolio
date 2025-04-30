@@ -1,0 +1,148 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "src": "./img/tag-1.png",
+      "title": "Wordpress Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+    },
+    {
+      "id": "2",
+      "src": "./img/product-chain-1.png",
+      "title": "MERN Stack Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+    },
+    {
+      "id": "3",
+      "src": "./img/feather-pen-1.png",
+      "title": "React Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+    },
+    {
+      "id": "4",
+      "src": "./img/feather-pen-2.png",
+      "title": "Graphics Designing",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "1",
+      "src": "./img/placeholder-image.png",
+      "title": "Gategold",
+      "description": "Gategold Nigeria Limited is a leading Gym equipment provider in Nigeria",
+      "buttonText": "View Live",
+      "link": "https://gategoldfitness.com/"
+    },
+    {
+      "id": "2",
+      "src": "./img/placeholder-image-1.png",
+      "title": "Dunsun's Hub",
+      "description": "Dunsin's Hub is your one-stop destination for meals, drinks, groceries, and everything in between.",
+      "buttonText": "View Live",
+      "link": "https://dunsinshub.com/"
+    },
+    {
+      "id": "3",
+      "src": "./img/placeholder-image-2.png",
+      "title": "Frictionless Lubricants Nig.Ltd.",
+      "description": "A lubrication services company with emphasis on Lubricants supplies, lubrication training, lubrication support services.",
+      "buttonText": "View Live",
+      "link": "https://frictionlesslubricants.com/"
+    }
+  ],
+  "portfolio2": [
+    {
+      "id": "1",
+      "src": "./img/placeholder-image-3.png",
+      "title": "Creastech",
+      "description": "We are a Nigerian ICT company committed to providing exceptional technology solutions to meet the evolving needs of businesses.",
+      "buttonText": "View Live",
+      "link": "https://creastech.com/"
+    },
+    {
+      "id": "2",
+      "src": "./img/placeholder-image-4.png",
+      "title": "Big World Solar Energy",
+      "description": "The best energy solution depends on several factors, including your specific needs, location, budget, and environmental considerations.",
+      "buttonText": "View Live",
+      "link": "https://bigworldsolar.com/"
+    },
+    {
+      "id": "3",
+      "src": "./img/placeholder-image-2.png",
+      "title": "Frictionless Lubricants Nig.Ltd.",
+      "description": "A lubrication services company with emphasis on Lubricants supplies, lubrication training, lubrication support services.",
+      "buttonText": "View Live",
+      "link": "https://frictionlesslubricants.com/"
+    }
+  ],
+  "testimonial": [
+    {
+      "id": "1",
+      "count": "5",
+      "src": "./img/cert1.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Dianne Russel",
+      "author_designation": "Starbucks"
+    },
+    {
+      "id": "2",
+      "count": "5",
+      "src": "./img/cert2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Kristin Watson",
+      "author_designation": "Louis Vuitton"
+    },
+    {
+      "id": "3",
+      "count": "5",
+      "src": "./img/cert3.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Kathryn Murphy",
+      "author_designation": "McDonald's"
+    }
+  ],
+  "technologies": [
+    {
+      "id": "1",
+      "src": "",
+      "description": "React JS"
+    },
+    {
+      "id": "2",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "3",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "4",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "4",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "4",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "4",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    },
+    {
+      "id": "4",
+      "src": "./img/tag-1.png",
+      "description": "React JS"
+    }
+  ]
+}
