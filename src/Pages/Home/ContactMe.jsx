@@ -1,4 +1,28 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 export default function ContactMe() {
+  const form = useRef(null); // Initialize ref
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!form.current) {
+      console.error("Form ref not attached properly!");
+      return;
+    }
+
+    emailjs.sendForm('service_i3gsg8q', 'template_k66u0ks', form.current, 'S2sEAG-6Jz8gkWo_S')
+      .then((result) => {
+        console.log(result.text);
+        alert('Message sent successfully!');
+        form.current.reset();
+      }, (error) => {
+        console.log(error.text);
+        alert('An error occurred, please try again.');
+      });
+  };
+
   return (
     <section id="Contact" className="contact--section">
       <div>
@@ -8,7 +32,9 @@ export default function ContactMe() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
         </p>
       </div>
-      <form className="contact--form--container">
+
+      {/* 👉 Attach ref={form} here */}
+      <form ref={form} className="contact--form--container">
         <div className="container">
           <label htmlFor="first-name" className="contact--label">
             <span className="text-md">First Name</span>
@@ -41,9 +67,9 @@ export default function ContactMe() {
             />
           </label>
           <label htmlFor="phone-number" className="contact--label">
-            <span className="text-md">phone-number</span>
+            <span className="text-md">Phone Number</span>
             <input
-              type="number"
+              type="tel"
               className="contact--input text-md"
               name="phone-number"
               id="phone-number"
@@ -51,30 +77,37 @@ export default function ContactMe() {
             />
           </label>
         </div>
-        <label htmlFor="choode-topic" className="contact--label">
+
+        <label htmlFor="choose-topic" className="contact--label">
           <span className="text-md">Choose a service</span>
-          <select id="choose-topic" className="contact--input text-md">
-            <option>Wordpress Development</option>
+          <select name="choose-topic" id="choose-topic" className="contact--input text-md">
+            <option>WordPress Development</option>
             <option>MERN Stack Development</option>
             <option>React Development</option>
             <option>Graphics Designing</option>
           </select>
         </label>
+
         <label htmlFor="message" className="contact--label">
           <span className="text-md">Message</span>
           <textarea
             className="contact--input text-md"
             id="message"
+            name="message"
             rows="6"
             placeholder="Type your message..."
           />
         </label>
-        <label htmlFor="checkboc" className="checkbox--label">
+
+        <label htmlFor="checkbox" className="checkbox--label">
           <input type="checkbox" required name="checkbox" id="checkbox" />
           <span className="text-sm">I accept the terms</span>
         </label>
+
         <div>
-          <button className="btn btn-primary contact--form--btn">Submit</button>
+          <button className="btn btn-primary contact--form--btn" onClick={sendEmail}>
+            Submit
+          </button>
         </div>
       </form>
     </section>
