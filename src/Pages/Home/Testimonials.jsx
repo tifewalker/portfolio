@@ -12,14 +12,17 @@ export default function Testimonial() {
       <div className="portfolio--section--container">
         {data?.testimonial?.map((item, index) => (
           <div key={index} className="testimonial--section--card">
-            
-               <img src={item.src} width={300} />
-                <p className="text-md testimonial--author--name">
-                  {item.author_name}
-                </p>
+            <img src={item.src} width={300} />
+          </div>
+        ))}
+      </div>
+      <div className="portfolio--section--container">
+        {data?.testimonial2?.map((item, index) => (
+          <div key={index} className="testimonial--section--card">
+            <img src={item.src} width={300} />
           </div>
         ))}
       </div>
     </section>
   );
-}
+} 

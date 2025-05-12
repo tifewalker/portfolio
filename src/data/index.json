@@ -4,25 +4,25 @@
       "id": "1",
       "src": "./img/tag-1.png",
       "title": "Wordpress Development",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Custom, responsive WordPress sites built for performance, SEO, and ease of use."
     },
     {
       "id": "2",
       "src": "./img/product-chain-1.png",
       "title": "MERN Stack Development",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Full-stack web apps using MongoDB, Express, React, and Node.js — fast, scalable, and modern.  "
     },
     {
       "id": "3",
       "src": "./img/feather-pen-1.png",
       "title": "React Development",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Interactive, high-performance UIs with reusable components and responsive design"
     },
     {
       "id": "4",
       "src": "./img/feather-pen-2.png",
       "title": "Graphics Designing",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Clean, creative visuals — logos, fliers, banners, and web assets that elevate your brand."
     }
   ],
   "portfolio": [
@@ -82,6 +82,40 @@
       "id": "1",
       "count": "5",
       "src": "./img/cert1.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Dianne Russel",
+      "author_designation": "Starbucks"
+    },
+    {
+      "id": "2",
+      "count": "5",
+      "src": "./img/cert2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Kristin Watson",
+      "author_designation": "Louis Vuitton"
+    },
+    {
+      "id": "3",
+      "count": "5",
+      "src": "./img/cert3.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Kathryn Murphy",
+      "author_designation": "McDonald's"
+    },
+    {
+      "id": "4",
+      "count": "5",
+      "src": "./img/cert4.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "author_name": "Kathryn Murphy",
+      "author_designation": "McDonald's"
+    }
+  ],
+   "testimonial2": [
+    {
+      "id": "1",
+      "count": "5",
+      "src": "./img/cert5.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
       "author_name": "Dianne Russel",
       "author_designation": "Starbucks"

@@ -12,15 +12,24 @@ export default function ContactMe() {
       return;
     }
 
-    emailjs.sendForm('service_i3gsg8q', 'template_k66u0ks', form.current, 'S2sEAG-6Jz8gkWo_S')
-      .then((result) => {
-        console.log(result.text);
-        alert('Message sent successfully!');
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
-        alert('An error occurred, please try again.');
-      });
+    emailjs
+      .sendForm(
+        "service_i3gsg8q",
+        "template_k66u0ks",
+        form.current,
+        "S2sEAG-6Jz8gkWo_S"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("An error occurred, please try again.");
+        }
+      );
   };
 
   return (
@@ -29,7 +38,7 @@ export default function ContactMe() {
         <p className="sub--title">Get In Touch</p>
         <h2>Contact Me</h2>
         <p className="text-lg">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
+          Have a project or question? Let’s connect!
         </p>
       </div>
 
@@ -80,7 +89,11 @@ export default function ContactMe() {
 
         <label htmlFor="choose-topic" className="contact--label">
           <span className="text-md">Choose a service</span>
-          <select name="choose-topic" id="choose-topic" className="contact--input text-md">
+          <select
+            name="choose-topic"
+            id="choose-topic"
+            className="contact--input text-md"
+          >
             <option>WordPress Development</option>
             <option>MERN Stack Development</option>
             <option>React Development</option>
@@ -99,13 +112,11 @@ export default function ContactMe() {
           />
         </label>
 
-        <label htmlFor="checkbox" className="checkbox--label">
-          <input type="checkbox" required name="checkbox" id="checkbox" />
-          <span className="text-sm">I accept the terms</span>
-        </label>
-
         <div>
-          <button className="btn btn-primary contact--form--btn" onClick={sendEmail}>
+          <button
+            className="btn btn-primary contact--form--btn"
+            onClick={sendEmail}
+          >
             Submit
           </button>
         </div>

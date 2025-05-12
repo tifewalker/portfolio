@@ -81,7 +81,7 @@ function Footer() {
           <ul>
             <li>
               <a
-                href="https://www.twitter.com/"
+                href="https://x.com/Tife_d_walker"
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
