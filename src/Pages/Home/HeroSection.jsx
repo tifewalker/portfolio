@@ -85,19 +85,22 @@ export default function HeroSection() {
   Get In Touch
 </Link>
               
-             <button className="btn btn-outline-primary hero--secondary">
+            <button 
+  className="btn btn-outline-primary hero--secondary"
+  onClick={() => window.open('./img/my resume.pdf', '_blank')}
+>
   <FontAwesomeIcon icon={faFile} />
   View Resume
 </button>
               
              <div className="hero--social--links">
-  <a href="#" className="social--link" aria-label="GitHub">
+  <a href="https://github.com/tifewalker" className="social--link" aria-label="GitHub">
     <FontAwesomeIcon icon={faGithub} />
   </a>
-  <a href="#" className="social--link" aria-label="LinkedIn">
+  <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="social--link" aria-label="LinkedIn">
     <FontAwesomeIcon icon={faLinkedin} />
   </a>
-  <a href="#" className="social--link" aria-label="Twitter">
+  <a href="https://x.com/tife_d_walker?s=21" className="social--link" aria-label="Twitter">
     <FontAwesomeIcon icon={faTwitter} />
   </a>
 </div>

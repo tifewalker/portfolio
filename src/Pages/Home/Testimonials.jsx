@@ -217,16 +217,6 @@ export default function Testimonial() {
         </div>
 
         {/* Call to action */}
-        <div className="certificates--cta">
-          <div className="cta--content">
-            <h3>Want to verify a certificate?</h3>
-            <p>All certificates can be verified through their respective issuing authorities</p>
-            <button className="cta--btn">
-              <span>🔍</span>
-              Verify Certificates
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
