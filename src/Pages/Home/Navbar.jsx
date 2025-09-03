@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleNav = () => {
     setNavActive(!navActive);
@@ -15,7 +16,7 @@ function Navbar() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 500) {
-        closeMenu;
+        closeMenu();
       }
     };
 
@@ -28,23 +29,45 @@ function Navbar() {
 
   useEffect(() => {
     if (window.innerWidth <= 1200) {
-      closeMenu;
+      closeMenu();
     }
   }, []);
 
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img src="./img/logo.svg" alt="Logoipsum" />
+    <nav className={`navbar ${navActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
+      {/* Logo Section */}
+      <div className="navbar--logo">
+        <div className="logo--container">
+          <div className="logo--avatar">
+            <span>TW</span>
+          </div>
+          <span className="logo--text">TifeWalker</span>
+        </div>
       </div>
+
+      {/* Hamburger Menu */}
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
+        role="button"
+        aria-label="Toggle navigation menu"
+        tabIndex={0}
       >
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
       </a>
+
+      {/* Navigation Items */}
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul>
           <li>
@@ -58,7 +81,8 @@ function Navbar() {
               to="heroSection"
               className="navbar--content"
             >
-              Home
+              <span className="nav--icon">🏠</span>
+              <span>Home</span>
             </Link>
           </li>
           <li>
@@ -72,7 +96,8 @@ function Navbar() {
               to="MyPortfolio"
               className="navbar--content"
             >
-              Portfolio
+              <span className="nav--icon">💼</span>
+              <span>Portfolio</span>
             </Link>
           </li>
           <li>
@@ -86,7 +111,8 @@ function Navbar() {
               to="AboutMe"
               className="navbar--content"
             >
-              About Me
+              <span className="nav--icon">👨‍💻</span>
+              <span>About Me</span>
             </Link>
           </li>
           <li>
@@ -100,11 +126,14 @@ function Navbar() {
               to="testimonial"
               className="navbar--content"
             >
-              Certifications
+              <span className="nav--icon">🏆</span>
+              <span>Certifications</span>
             </Link>
           </li>
         </ul>
       </div>
+
+      {/* Contact Button */}
       <Link
         onClick={closeMenu}
         activeClass="navbar--active-content"
@@ -113,7 +142,7 @@ function Navbar() {
         offset={-70}
         duration={500}
         to="Contact"
-        className="btn btn-outline-primary"
+        className="btn btn-outline-primary contact--btn"
       >
         Contact Me
       </Link>

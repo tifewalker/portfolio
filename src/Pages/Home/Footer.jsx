@@ -2,173 +2,319 @@ import { Link } from "react-scroll";
 import React from "react";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer--container">
-      <div className="footer--link--container">
-        <div>
-          <img src="./img/logo.svg" alt="Logoipsum" />
+      {/* Footer Main Content */}
+      <div className="footer--main">
+        {/* Brand Section */}
+        <div className="footer--brand">
+          <div className="footer--logo">
+            <div className="logo--avatar">
+              <span>BO</span>
+            </div>
+            <div className="logo--info">
+              <h3>Boluwatife Olawuyi</h3>
+              <p>Full-Stack Developer</p>
+            </div>
+          </div>
+          <p className="footer--description">
+            Building modern web applications with clean code and creative solutions. 
+            Always excited to take on new challenges and collaborate on innovative projects.
+          </p>
+          <div className="footer--stats">
+            <div className="footer--stat">
+              <span className="stat--number">50+</span>
+              <span className="stat--label">Projects</span>
+            </div>
+            <div className="footer--stat">
+              <span className="stat--number">3+</span>
+              <span className="stat--label">Years Exp</span>
+            </div>
+            <div className="footer--stat">
+              <span className="stat--number">100%</span>
+              <span className="stat--label">Client Satisfaction</span>
+            </div>
+          </div>
         </div>
-        <div className="footer--items">
-          <ul>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="heroSection"
-                className="text-md"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="MyPortfolio"
-                className="text-md"
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="AboutMe"
-                className="text-md"
-              >
-                About Me
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Contact"
-                className="text-md"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="testimonial"
-                className="text-md"
-              >
-                Certification
-              </Link>
-            </li>
-          </ul>
+
+        {/* Quick Links */}
+        <div className="footer--links--section">
+          <div className="footer--links--group">
+            <h4 className="footer--links--title">
+              <svg viewBox="0 0 16 16" width="16" height="16">
+                <path fillRule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25h-12.5a.25.25 0 01-.25-.25v-8.5zM1.75 2a1.75 1.75 0 00-1.75 1.75v8.5c0 .966.784 1.75 1.75 1.75h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75z"/>
+              </svg>
+              Navigation
+            </h4>
+            <ul className="footer--links--list">
+              <li>
+                <Link
+                  activeClass="footer--link--active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  to="heroSection"
+                  className="footer--link"
+                >
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
+                  </svg>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="footer--link--active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  to="MyPortfolio"
+                  className="footer--link"
+                >
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 10.5v-8z"/>
+                  </svg>
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="footer--link--active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  to="AboutMe"
+                  className="footer--link"
+                >
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zM8 9a5 5 0 00-4.546 2.916A5.986 5.986 0 008 14a5.986 5.986 0 004.546-2.084A5 5 0 008 9z"/>
+                  </svg>
+                  About Me
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="footer--link--active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  to="Contact"
+                  className="footer--link"
+                >
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75z"/>
+                  </svg>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="footer--link--active"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  to="testimonial"
+                  className="footer--link"
+                >
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+                  </svg>
+                  Certifications
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer--links--group">
+            <h4 className="footer--links--title">
+              <svg viewBox="0 0 16 16" width="16" height="16">
+                <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              Projects
+            </h4>
+            <ul className="footer--links--list">
+              <li>
+                <a href="https://github.com/tifewalker" target="_blank" rel="noreferrer" className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 10.5v-8z"/>
+                  </svg>
+                  All Repositories
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+                  </svg>
+                  Featured Work
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25V5.372a2.25 2.25 0 10-1.5 0v.878A.75.75 0 0110.25 7H5.75a.75.75 0 01-.75-.75V5.372z"/>
+                  </svg>
+                  Open Source
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
+                  </svg>
+                  Latest Updates
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer--links--group">
+            <h4 className="footer--links--title">
+              <svg viewBox="0 0 16 16" width="16" height="16">
+                <path fillRule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0114.25 13H8.06l-2.573 2.573A1.458 1.458 0 013 14.543V13H1.75A1.75 1.75 0 010 11.25V1.75z"/>
+              </svg>
+              Services
+            </h4>
+            <ul className="footer--links--list">
+              <li>
+                <span className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M4 7a1 1 0 011-1h6a1 1 0 110 2H5a1 1 0 01-1-1zM4 10a1 1 0 011-1h3a1 1 0 110 2H5a1 1 0 01-1-1z"/>
+                  </svg>
+                  Web Development
+                </span>
+              </li>
+              <li>
+                <span className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M4 7a1 1 0 011-1h6a1 1 0 110 2H5a1 1 0 01-1-1zM4 10a1 1 0 011-1h3a1 1 0 110 2H5a1 1 0 01-1-1z"/>
+                  </svg>
+                  React Development
+                </span>
+              </li>
+              <li>
+                <span className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M4 7a1 1 0 011-1h6a1 1 0 110 2H5a1 1 0 01-1-1zM4 10a1 1 0 011-1h3a1 1 0 110 2H5a1 1 0 01-1-1z"/>
+                  </svg>
+                  MERN Stack
+                </span>
+              </li>
+              <li>
+                <span className="footer--link">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path fillRule="evenodd" d="M4 7a1 1 0 011-1h6a1 1 0 110 2H5a1 1 0 01-1-1zM4 10a1 1 0 011-1h3a1 1 0 110 2H5a1 1 0 01-1-1z"/>
+                  </svg>
+                  UI/UX Design
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="footer--social--icon">
-          <ul>
-            <li>
-              <a
-                href="https://x.com/Tife_d_walker"
-                className="navbar--content"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 33 33"
-                  fill="none"
-                >
-                  <path
-                    d="M28.6304 9.61132C28.0112 10.4373 27.2627 11.1579 26.4137 11.7451C26.4137 11.9609 26.4137 12.1767 26.4137 12.4045C26.4205 16.3229 24.8553 20.0803 22.0691 22.8341C19.2827 25.588 15.5083 27.108 11.5921 27.0533C9.32799 27.0609 7.0929 26.544 5.0619 25.5429C4.95238 25.4951 4.88175 25.3868 4.88216 25.2672V25.1353C4.88216 24.9632 5.02164 24.8237 5.1937 24.8237C7.41923 24.7503 9.56536 23.9787 11.3285 22.618C9.31404 22.5773 7.50159 21.384 6.66747 19.5491C6.62535 19.4489 6.63846 19.3339 6.7021 19.2457C6.76572 19.1576 6.87067 19.1091 6.979 19.1176C7.59123 19.1791 8.20958 19.1221 8.80027 18.9497C6.57652 18.4881 4.90562 16.642 4.66648 14.3824C4.65799 14.274 4.70656 14.1691 4.79467 14.1053C4.88276 14.0417 4.99766 14.0285 5.09784 14.0708C5.69459 14.3341 6.33879 14.4728 6.99099 14.4783C5.04246 13.1994 4.20082 10.7669 4.94207 8.55641C5.01859 8.34163 5.20242 8.18295 5.426 8.13871C5.64958 8.09445 5.87995 8.17116 6.03243 8.34064C8.66186 11.1391 12.2747 12.8067 16.1092 12.9918C16.0111 12.5999 15.9628 12.1971 15.9655 11.7931C16.0013 9.67441 17.3123 7.78707 19.2845 7.01461C21.2567 6.24217 23.4999 6.73749 24.964 8.26871C25.9619 8.07859 26.9267 7.74339 27.8276 7.27373C27.8936 7.23253 27.9773 7.23253 28.0433 7.27373C28.0845 7.33976 28.0845 7.42348 28.0433 7.48951C27.6069 8.48881 26.8697 9.32695 25.9345 9.88704C26.7535 9.79207 27.558 9.59888 28.3309 9.31164C28.396 9.26735 28.4815 9.26735 28.5465 9.31164C28.6011 9.33657 28.6419 9.38427 28.658 9.44201C28.6741 9.49976 28.664 9.56169 28.6304 9.61132Z"
-                    fill="black"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/"
-                className="navbar--content"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 33 33"
-                  fill="none"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M7.33341 4.65479H26.0001C27.4729 4.65479 28.6667 5.84869 28.6667 7.32145V25.9881C28.6667 27.4609 27.4729 28.6548 26.0001 28.6548H7.33341C5.86065 28.6548 4.66675 27.4609 4.66675 25.9881V7.32145C4.66675 5.84869 5.86065 4.65479 7.33341 4.65479ZM11.3334 24.6548C11.7016 24.6548 12.0001 24.3563 12.0001 23.9881V14.6548C12.0001 14.2867 11.7016 13.9881 11.3334 13.9881H9.33342C8.96523 13.9881 8.66675 14.2867 8.66675 14.6548V23.9881C8.66675 24.3563 8.96523 24.6548 9.33342 24.6548H11.3334ZM10.3334 12.6548C9.22884 12.6548 8.33341 11.7594 8.33341 10.6548C8.33341 9.55021 9.22884 8.65479 10.3334 8.65479C11.438 8.65479 12.3334 9.55021 12.3334 10.6548C12.3334 11.7594 11.438 12.6548 10.3334 12.6548ZM24.0001 24.6548C24.3682 24.6548 24.6667 24.3563 24.6667 23.9881V17.8548C24.7101 15.7359 23.1435 13.9275 21.0401 13.6681C19.5694 13.5338 18.1445 14.2207 17.3334 15.4548V14.6548C17.3334 14.2867 17.0349 13.9881 16.6667 13.9881H14.6667C14.2986 13.9881 14.0001 14.2867 14.0001 14.6548V23.9881C14.0001 24.3563 14.2986 24.6548 14.6667 24.6548H16.6667C17.0349 24.6548 17.3334 24.3563 17.3334 23.9881V18.9881C17.3334 17.8836 18.2289 16.9881 19.3334 16.9881C20.4379 16.9881 21.3334 17.8836 21.3334 18.9881V23.9881C21.3334 24.3563 21.6319 24.6548 22.0001 24.6548H24.0001Z"
-                    fill="black"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/2349154110883"
-                className="navbar--content"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 33 33"
-                  fill="none"
-                >
-                  <path
-                    d="M16.6667 4.65479C10.4267 4.65479 5.33341 9.74812 5.33341 15.9881C5.33341 18.0881 5.89341 20.0748 6.88008 21.7881L5.33341 27.3215L11.0401 25.8015C12.6934 26.6881 14.6267 27.1881 16.6667 27.1881C22.9067 27.1881 28.0001 22.0948 28.0001 15.8548C28.0001 9.61479 22.9067 4.65479 16.6667 4.65479ZM22.0001 20.0881C21.7334 20.7881 20.6401 21.3881 19.7334 21.5881C19.0934 21.7215 18.2801 21.8215 15.8401 20.7548C12.5067 19.2881 10.4534 15.9215 10.2801 15.6881C10.1067 15.4548 8.80008 13.7215 8.80008 11.9215C8.80008 10.1215 9.70675 9.25479 10.0267 8.92146C10.3467 8.58812 10.7334 8.50146 10.9601 8.50146C11.1867 8.50146 11.4134 8.50146 11.6001 8.51479C11.8001 8.52812 12.0667 8.44146 12.3334 9.05479C12.6001 9.66812 13.2934 11.4681 13.3734 11.6415C13.4534 11.8148 13.5334 12.0481 13.4001 12.2815C13.2667 12.5148 13.1867 12.6215 13.0134 12.8281C12.8401 13.0348 12.6801 13.1881 12.5067 13.4081C12.3467 13.6015 12.1734 13.8081 12.3734 14.1415C12.5734 14.4748 13.2801 15.6215 14.3201 16.5548C15.6401 17.7548 16.7201 18.1215 17.0801 18.2815C17.4401 18.4415 17.6934 18.4015 17.9067 18.1748C18.1201 17.9481 18.7867 17.1881 19.0267 16.8548C19.2667 16.5215 19.5067 16.5748 19.8267 16.6948C20.1467 16.8148 21.9334 17.6948 22.2801 17.8681C22.6267 18.0415 22.8534 18.1215 22.9334 18.2815C23.0134 18.4415 23.0134 19.0548 22.0001 20.0881Z"
-                    fill="black"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/tifewalker"
-                className="navbar--content"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 33 33"
-                  fill="none"
-                >
-                  <path
-                    d="M16.6667 4.65479C10.2201 4.65479 5.00008 9.87479 5.00008 16.3215C5.00008 21.4815 8.21341 25.8815 12.7334 27.3748C13.3334 27.4815 13.5601 27.1215 13.5601 26.8081C13.5601 26.5215 13.5467 25.7615 13.5401 24.7215C10.3467 25.4281 9.64008 23.2215 9.64008 23.2215C9.09341 21.9348 8.30675 21.5748 8.30675 21.5748C7.22008 20.8415 8.38675 20.8548 8.38675 20.8548C9.58675 20.9348 10.2267 22.0681 10.2267 22.0681C11.2934 23.8948 13.0134 23.3615 13.5867 23.0615C13.6934 22.2815 14.0134 21.7481 14.3667 21.4548C11.7467 21.1615 8.98008 20.1348 8.98008 15.6415C8.98008 14.4281 9.44008 13.4348 10.2534 12.6548C10.1334 12.3581 9.71341 11.1481 10.3734 9.52146C10.3734 9.52146 11.3734 9.20812 13.5267 10.6081C14.4934 10.3481 15.5267 10.2215 16.5534 10.2148C17.5801 10.2215 18.6134 10.3481 19.5801 10.6081C21.7334 9.20812 22.7334 9.52146 22.7334 9.52146C23.3934 11.1481 22.9734 12.3581 22.8534 12.6548C23.6667 13.4348 24.1267 14.4281 24.1267 15.6415C24.1267 20.1481 21.3534 21.1548 18.7267 21.4481C19.1601 21.8348 19.5601 22.5948 19.5601 23.7481C19.5601 25.3615 19.5467 26.6681 19.5467 27.0548C19.5467 27.3681 19.7734 27.7348 20.3801 27.6215C24.8934 26.1215 28.1001 21.7281 28.1001 16.7881C28.1001 10.3415 22.8801 5.12146 16.4334 5.12146C16.5134 5.01479 16.6667 4.95479 16.6667 4.65479Z"
-                    fill="black"
-                  />
-                </svg>
-              </a>
-            </li>
-          </ul>
+
+        {/* Social Links */}
+        <div className="footer--social--section">
+          <h4 className="footer--social--title">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <path fillRule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zM8 9a5 5 0 00-4.546 2.916A5.986 5.986 0 008 14a5.986 5.986 0 004.546-2.084A5 5 0 008 9z"/>
+            </svg>
+            Connect
+          </h4>
+          <div className="footer--social--links">
+            <a
+              href="https://x.com/Tife_d_walker"
+              className="footer--social--link twitter"
+              target="_blank"
+              rel="noreferrer"
+              title="Follow on X (Twitter)"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/"
+              className="footer--social--link linkedin"
+              target="_blank"
+              rel="noreferrer"
+              title="Connect on LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/2349154110883"
+              className="footer--social--link whatsapp"
+              target="_blank"
+              rel="noreferrer"
+              title="Message on WhatsApp"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.488"/>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/tifewalker"
+              className="footer--social--link github"
+              target="_blank"
+              rel="noreferrer"
+              title="View GitHub Profile"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <div className="footer--contact--info">
+            <div className="contact--item">
+              <svg viewBox="0 0 16 16" width="14" height="14">
+                <path fillRule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75z"/>
+              </svg>
+              <span>your.email@example.com</span>
+            </div>
+            <div className="contact--item">
+              <svg viewBox="0 0 16 16" width="14" height="14">
+                <path fillRule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
+              </svg>
+              <span>Available for projects</span>
+            </div>
+          </div>
         </div>
       </div>
-      
+
+      {/* Footer Bottom */}
+      <div className="footer--bottom">
+        <div className="footer--bottom--content">
+          <div className="footer--copyright">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 4.42 3.58 8 8 8 4.42 0 8-3.58 8-8 0-4.42-3.58-8-8-8zm0 1.5c3.59 0 6.5 2.91 6.5 6.5 0 3.59-2.91 6.5-6.5 6.5C4.41 14.5 1.5 11.59 1.5 8c0-3.59 2.91-6.5 6.5-6.5zm-.75 2.75c-.41 0-.75.34-.75.75v.56c-.44.02-.83.13-1.14.33l-.28-.48c-.20-.35-.65-.47-1-.27-.35.20-.47.65-.27 1l.28.48c-.25.3-.4.68-.4 1.1 0 .83.67 1.5 1.5 1.5h1c.28 0 .5.22.5.5s-.22.5-.5.5h-1.5c-.41 0-.75.34-.75.75s.34.75.75.75h.5v.56c0 .41.34.75.75.75s.75-.34.75-.75v-.56c.44-.02.83-.13 1.14-.33l.28.48c.20.35.65.47 1 .27.35-.20.47-.65.27-1l-.28-.48c.25-.3.4-.68.4-1.1 0-.83-.67-1.5-1.5-1.5h-1c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h1.5c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-.5v-.56c0-.41-.34-.75-.75-.75z"/>
+            </svg>
+            <span>© {currentYear} Boluwatife Olawuyi. All rights reserved.</span>
+          </div>
+          
+          <div className="footer--meta">
+            <span className="footer--version">
+              <svg viewBox="0 0 16 16" width="14" height="14">
+                <path fillRule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+              </svg>
+              Portfolio v2.0
+            </span>
+            <div className="footer--status">
+              <span className="status--dot online"></span>
+              <span>Open for opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
