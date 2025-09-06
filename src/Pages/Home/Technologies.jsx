@@ -4,8 +4,15 @@ export default function Technologies() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [hoveredTech, setHoveredTech] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if mobile on mount and resize
+    const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
+    checkIsMobile();
+    
+    window.addEventListener('resize', checkIsMobile);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,7 +25,10 @@ export default function Technologies() {
     const element = document.getElementById('mySkills');
     if (element) observer.observe(element);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', checkIsMobile);
+    };
   }, []);
 
   // Technology data with categories and experience levels
@@ -117,15 +127,15 @@ export default function Technologies() {
           ))}
         </div>
 
-        {/* Technologies grid */}
-        <div className="tech--grid">
+        {/* Technologies grid/list */}
+        <div className={`tech--grid ${isMobile ? 'mobile-list' : ''}`}>
           {filteredTechnologies.map((tech, index) => (
             <div
               key={tech.name}
-              className={`tech--card ${isVisible ? 'animate-in' : ''}`}
+              className={`tech--card ${isVisible ? 'animate-in' : ''} ${isMobile ? 'mobile-card' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => setHoveredTech(tech.name)}
-              onMouseLeave={() => setHoveredTech(null)}
+              onMouseEnter={() => !isMobile && setHoveredTech(tech.name)}
+              onMouseLeave={() => !isMobile && setHoveredTech(null)}
             >
               {/* Card header with GitHub-style elements */}
               <div className="tech--card--header">
@@ -192,8 +202,8 @@ export default function Technologies() {
                 </div>
               </div>
 
-              {/* Hover tooltip */}
-              {hoveredTech === tech.name && (
+              {/* Hover tooltip - only on desktop */}
+              {!isMobile && hoveredTech === tech.name && (
                 <div className="tech--tooltip">
                   <div className="tooltip--content">
                     <strong>{tech.name}</strong>
