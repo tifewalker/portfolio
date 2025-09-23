@@ -47,9 +47,6 @@ function Navbar() {
       {/* Logo Section */}
       <div className="navbar--logo">
         <div className="logo--container">
-          <div className="logo--avatar">
-            <span>TW</span>
-          </div>
           <span className="logo--text">TifeWalker</span>
         </div>
       </div>

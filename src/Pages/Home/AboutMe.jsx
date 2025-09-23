@@ -157,38 +157,66 @@ export default function AboutMe() {
             )}
 
             {/* Experience Tab */}
-            {activeTab === 'experience' && (
-              <div className="experience--content">
-                <div className="timeline--container">
-                  <div className="timeline--item">
-                    <div className="timeline--marker"></div>
-                    <div className="timeline--content">
-                      <h3>Senior MERN Stack Developer</h3>
-                      <p className="timeline--period">2022 - Present</p>
-                      <p>Leading full-stack development projects and mentoring junior developers.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="timeline--item">
-                    <div className="timeline--marker"></div>
-                    <div className="timeline--content">
-                      <h3>React Developer</h3>
-                      <p className="timeline--period">2021 - 2022</p>
-                      <p>Specialized in building responsive web applications with React ecosystem.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="timeline--item">
-                    <div className="timeline--marker"></div>
-                    <div className="timeline--content">
-                      <h3>WordPress Developer</h3>
-                      <p className="timeline--period">2020 - 2021</p>
-                      <p>Custom theme development and plugin creation for various clients.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+           {activeTab === 'experience' && (
+  <div className="experience--content">
+    <div className="timeline--container">
+      <div className="timeline--item">
+        <div className="timeline--marker"></div>
+        <div className="timeline--content">
+          <h3>Application Engineer</h3>
+          <p className="company--name">Creastech Limited, Lagos, Nigeria</p>
+          <p className="timeline--period">January 2024 – Present</p>
+          <ul className="experience--list">
+            <li>Developed dynamic web applications using the MERN Stack</li>
+            <li>Enhanced client solutions with React, graphic design, WordPress, and Microsoft technologies</li>
+            <li>Streamlined business processes via Zoho CRM and automation tools</li>
+            <li>Managed Linux systems (Ubuntu, Kali) and server virtualization</li>
+            <li>Handled PHP and SQL databases, implementing recovery solutions</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div className="timeline--item">
+        <div className="timeline--marker"></div>
+        <div className="timeline--content">
+          <h3>Freelance Web Developer</h3>
+          <p className="timeline--period">June 2022 – Present</p>
+          <ul className="experience--list">
+            <li>Designed responsive websites and interactive front-end interfaces</li>
+            <li>Provided ongoing maintenance and optimization for web applications</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div className="timeline--item">
+        <div className="timeline--marker"></div>
+        <div className="timeline--content">
+          <h3>Web Designer & Blogger</h3>
+          <p className="company--name">A-Tech Solution, Ikeja, Lagos, Nigeria</p>
+          <p className="timeline--period">January 2022 – July 2022</p>
+          <ul className="experience--list">
+            <li>Developed business websites optimized for SEO</li>
+            <li>Created engaging blog content to drive traffic</li>
+            <li>Improved productivity by implementing technological solutions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="timeline--item">
+        <div className="timeline--marker"></div>
+        <div className="timeline--content">
+          <h3>Computer Instructor</h3>
+          <p className="company--name">Hoptec Services, Lagos, Nigeria</p>
+          <p className="timeline--period">November 2021 – March 2022</p>
+          <ul className="experience--list">
+            <li>Trained professionals in Microsoft Office applications</li>
+            <li>Conducted sessions on Windows OS navigation and basic IT skills</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
             {/* Achievements Tab */}
             {activeTab === 'achievements' && (

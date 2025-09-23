@@ -294,8 +294,8 @@ export default function ContactMe() {
                 </svg>
                 <h3>Email</h3>
               </div>
-              <p className="info--content">your.email@example.com</p>
-              <a href="mailto:your.email@example.com" className="info--link">
+              <p className="info--content">olawuyiboluwatife@gmail.com</p>
+              <a href="mailto:olawuyiboluwatife2@gmail.com" className="info--link">
                 <svg viewBox="0 0 16 16" width="14" height="14">
                   <path fillRule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1z"/>
                 </svg>
@@ -327,7 +327,7 @@ export default function ContactMe() {
                 <h3>GitHub</h3>
               </div>
               <p className="info--content">View my code repositories</p>
-              <a href="https://github.com/yourusername" className="info--link" target="_blank" rel="noreferrer">
+              <a href="https://github.com/tifewalker" className="info--link" target="_blank" rel="noreferrer">
                 <svg viewBox="0 0 16 16" width="14" height="14">
                   <path fillRule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1z"/>
                 </svg>
@@ -364,7 +364,7 @@ export default function ContactMe() {
               </div>
               <div className="availability--item">
                 <div className="availability--day">Wed</div>
-                <div className="availability--status busy">Busy</div>
+               <div className="availability--status available">Available</div>
               </div>
               <div className="availability--item">
                 <div className="availability--day">Thu</div>

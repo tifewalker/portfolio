@@ -19,7 +19,7 @@ export default function HeroSection() {
         <div className="hero--profile--header">
           <div className="hero--avatar--container">
             <div className="hero--avatar">
-              <img src="./img/hero_img.png" alt="Boluwatife Olawuyi" />
+              <img src="./img/hero_img.jpeg" alt="Boluwatife Olawuyi" />
               <div className="hero--status--indicator"></div>
             </div>
           </div>

@@ -414,7 +414,7 @@ h3 {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #f0f6fc; /* FIXED: Changed from dark blue to light for visibility */
+  background-color: #525557; 
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1059,7 +1059,7 @@ h3 {
 /* Responsive Design for Mobile */
 @media only screen and (max-width: 768px) {
   .hero--section {
-    padding: 100px 20px 50px; /* Reduced padding to prevent overflow */
+    padding: 100px 20px 50px;
     min-height: 100vh;
     box-sizing: border-box;
   }
@@ -1114,7 +1114,7 @@ h3 {
 
   .hero--stat {
     flex: 1;
-    min-width: calc(50% - 6px); /* Two stats per row on mobile */
+    min-width: calc(50% - 6px); 
     padding: 16px 12px;
   }
 

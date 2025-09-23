@@ -279,7 +279,7 @@ function Footer() {
               <svg viewBox="0 0 16 16" width="14" height="14">
                 <path fillRule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75z"/>
               </svg>
-              <span>your.email@example.com</span>
+              <span>olawuyiboluwatife2@gmail.com</span>
             </div>
             <div className="contact--item">
               <svg viewBox="0 0 16 16" width="14" height="14">
