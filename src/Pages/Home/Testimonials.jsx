@@ -34,14 +34,13 @@ export default function Testimonial() {
       id: `cert1-${index}`,
       category: 'featured',
       year: '2024',
-      issuer: 'Professional Institute'
     })),
     ...(data?.testimonial2 || []).map((item, index) => ({
       ...item,
       id: `cert2-${index}`,
       category: 'recent',
       year: '2023',
-      issuer: 'Tech Academy'
+      
     }))
   ];
 
