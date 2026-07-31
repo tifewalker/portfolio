@@ -68,6 +68,7 @@ export default function HeroSection() {
         .hero--cta {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           background: #ff6b5e;
           color: #ffffff;
           font-size: 15px;
@@ -77,6 +78,8 @@ export default function HeroSection() {
           border: none;
           cursor: pointer;
           text-decoration: none;
+          white-space: nowrap;
+          box-sizing: border-box;
           transition: background 0.2s ease, transform 0.15s ease;
         }
 
@@ -141,6 +144,12 @@ export default function HeroSection() {
             gap: 28px;
             padding: 20px 24px 0;
           }
+
+          .hero--cta {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+          }
         }
 
         @media (max-width: 480px) {
@@ -161,7 +170,9 @@ export default function HeroSection() {
 
           .hero--cta {
             width: 100%;
-            justify-content: center;
+            max-width: none;
+            font-size: 14px;
+            padding: 13px 20px;
           }
 
           .hero--nav {
@@ -193,16 +204,13 @@ export default function HeroSection() {
               I design and implement business systems, including CRM platforms, call center solutions, and workflow automation, alongside building custom full-stack applications using the MERN stack.
             </p>
 
-            <Link
-              to="Contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+            <a
+              href="/img/Boluwatife_Olawuyi_frontendcv.pdf"
+              download="Boluwatife_Olawuyi_frontendcv.pdf"
               className="hero--cta"
             >
               Download Resume
-            </Link>
+            </a>
           </div>
 
           <div className="hero--photo--wrap">

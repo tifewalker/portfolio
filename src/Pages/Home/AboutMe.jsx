@@ -185,6 +185,7 @@ export default function AboutMe() {
         .about--resume--btn {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
           background: #f0c830;
           color: #0d0d0b;
@@ -197,6 +198,8 @@ export default function AboutMe() {
           border: none;
           cursor: pointer;
           text-decoration: none;
+          white-space: nowrap;
+          box-sizing: border-box;
           transition: background 0.2s ease;
           margin-bottom: 52px;
         }
@@ -526,6 +529,23 @@ export default function AboutMe() {
           }
           .about--inner {
             padding: 0 24px;
+          }
+          .about--resume--btn {
+            width: 100%;
+            max-width: 320px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .about--inner {
+            padding: 0 20px;
+          }
+          .about--resume--btn {
+            width: 100%;
+            max-width: none;
+            font-size: 12px;
+            padding: 13px 18px;
+            margin-bottom: 40px;
           }
         }
       `}</style>

@@ -178,6 +178,7 @@ export default function MySkills() {
         .skills--cta {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
           background: #1f9d63;
           color: #ffffff;
@@ -189,6 +190,8 @@ export default function MySkills() {
           border: none;
           cursor: pointer;
           text-decoration: none;
+          white-space: nowrap;
+          box-sizing: border-box;
           transition: background 0.2s ease, transform 0.15s ease;
         }
 
@@ -359,6 +362,11 @@ export default function MySkills() {
           .skills--inner {
             padding: 0 32px;
           }
+          .skills--cta {
+            width: 100%;
+            max-width: 320px;
+            justify-content: center;
+          }
         }
 
         /* Mobile */
@@ -380,6 +388,7 @@ export default function MySkills() {
           }
           .skills--cta {
             width: 100%;
+            max-width: none;
             justify-content: center;
           }
           .accordion--title {
