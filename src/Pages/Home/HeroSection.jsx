@@ -1,156 +1,219 @@
 import { Link } from "react-scroll";
-import { Typewriter } from "react-simple-typewriter";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faFile, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section id="heroSection" className="hero--section">
-      <div className="hero--container">
-        {/* GitHub-style profile header */}
-        <div className="hero--profile--header">
-          <div className="hero--avatar--container">
-            <div className="hero--avatar">
-              <img src="./img/hero_img.jpeg" alt="Boluwatife Olawuyi" />
-              <div className="hero--status--indicator"></div>
-            </div>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        #heroSection {
+          background: #ffffff;
+          font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Nav — sits in normal flow, no fixed position, no dark background */
+        .hero--nav {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 40px;
+          padding: 28px 48px 0;
+        }
+
+        .hero--nav a {
+          font-size: 15px;
+          font-weight: 500;
+          color: #14213d;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .hero--nav a:hover {
+          color: #ff6b5e;
+        }
+
+        /* Hero body */
+        .hero--body {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          align-items: center;
+          gap: 48px;
+          padding: 72px 48px 96px;
+        }
+
+        .hero--heading {
+          font-size: clamp(34px, 4.2vw, 48px);
+          line-height: 1.25;
+          font-weight: 700;
+          color: #14213d;
+          margin: 0 0 24px;
+        }
+
+        .hero--heading span {
+          display: block;
+        }
+
+        .hero--description {
+          font-size: 16px;
+          line-height: 1.7;
+          color: #5b6270;
+          max-width: 460px;
+          margin: 0 0 36px;
+        }
+
+        .hero--cta {
+          display: inline-flex;
+          align-items: center;
+          background: #ff6b5e;
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 600;
+          padding: 14px 30px;
+          border-radius: 40px;
+          border: none;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .hero--cta:hover {
+          background: #ff5445;
+          transform: translateY(-1px);
+          color: #ffffff;
+          text-decoration: none;
+        }
+
+        .hero--photo--wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+
+        .hero--photo--glow {
+          width: 340px;
+          height: 340px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(255,107,94,0.10) 0%, rgba(20,33,61,0.04) 70%, transparent 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero--photo--frame {
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: #eef0f4;
+        }
+
+        .hero--photo--frame img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+
+        @media (max-width: 860px) {
+          .hero--body {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding-top: 40px;
+          }
+
+          .hero--description {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .hero--photo--wrap {
+            order: -1;
+          }
+
+          .hero--nav {
+            justify-content: center;
+            gap: 28px;
+            padding: 20px 24px 0;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero--body {
+            padding: 32px 20px 56px;
+            gap: 32px;
+          }
+
+          .hero--photo--glow {
+            width: 220px;
+            height: 220px;
+          }
+
+          .hero--photo--frame {
+            width: 180px;
+            height: 180px;
+          }
+
+          .hero--cta {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .hero--nav {
+            padding: 16px 16px 0;
+            gap: 20px;
+          }
+
+          .hero--nav a {
+            font-size: 13px;
+          }
+        }
+      `}</style>
+
+      <section id="heroSection">
+        <nav className="hero--nav">
+          <Link to="MyPortfolio" spy smooth offset={-70} duration={500}>Works</Link>
+          <Link to="AboutME" spy smooth offset={-70} duration={500}>About</Link>
+          <Link to="Contact" spy smooth offset={-70} duration={500}>Contact</Link>
+        </nav>
+
+        <div className="hero--body">
+          <div className="hero--content">
+            <h1 className="hero--heading">
+              <span>Hi, I'm Boluwatife,</span>
+              <span>Application Engineer</span>
+            </h1>
+
+            <p className="hero--description">
+              I design and implement business systems, including CRM platforms, call center solutions, and workflow automation, alongside building custom full-stack applications using the MERN stack.
+            </p>
+
+            <Link
+              to="Contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="hero--cta"
+            >
+              Download Resume
+            </Link>
           </div>
-          
-          <div className="hero--profile--info">
-            <div className="hero--username">
-              <h1 className="hero--name">Boluwatife Olawuyi</h1>
-              <span className="hero--handle">@TifeWalker</span>
-            </div>
-            
-            <div className="hero--bio">
-              <p className="hero--title">
-                <span className="hero--typewriter">
-                  <Typewriter
-                    words={[
-                      "WordPress Expert",
-                      "MERN Stack Developer", 
-                      "React Developer",
-                      "Graphics Designer",
-                    ]}
-                    loop={0}
-                    cursor
-                    cursorStyle="_"
-                    typeSpeed={70}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                  />
-                </span>
-              </p>
-              <p className="hero--description">
-                An experienced Application Engineer specializing in MERN Stack. 
-                Building innovative web solutions and crafting exceptional user experiences.
-              </p>
-            </div>
 
-            {/* GitHub-style stats */}
-            <div className="hero--stats">
-              <div className="hero--stat">
-                <span className="stat--number">50+</span>
-                <span className="stat--label">Projects</span>
+          <div className="hero--photo--wrap">
+            <div className="hero--photo--glow">
+              <div className="hero--photo--frame">
+                <img src="./img/hero_img.jpeg" alt="Boluwatife Olawuyi" />
               </div>
-              <div className="hero--stat">
-                <span className="stat--number">3+</span>
-                <span className="stat--label">Years Experience</span>
-              </div>
-              <div className="hero--stat">
-                <span className="stat--number">100%</span>
-                <span className="stat--label">Client Satisfaction</span>
-              </div>
-            </div>
-
-            {/* Action buttons */}
-            <div className="hero--actions">
-             <Link
-  to="Contact"
-  spy={true}
-  smooth={true}
-  offset={-70}
-  duration={500}
-  className="btn btn-primary hero--cta"
->
-  <FontAwesomeIcon icon={faComment} />
-  Get In Touch
-</Link>
-              
-            <button 
-  className="btn btn-outline-primary hero--secondary"
-  onClick={() => window.open('./img/my resume.pdf', '_blank')}
->
-  <FontAwesomeIcon icon={faFile} />
-  View Resume
-</button>
-              
-             <div className="hero--social--links">
-  <a href="https://github.com/tifewalker" className="social--link" aria-label="GitHub">
-    <FontAwesomeIcon icon={faGithub} />
-  </a>
-  <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="social--link" aria-label="LinkedIn">
-    <FontAwesomeIcon icon={faLinkedin} />
-  </a>
-  <a href="https://x.com/tife_d_walker?s=21" className="social--link" aria-label="Twitter">
-    <FontAwesomeIcon icon={faTwitter} />
-  </a>
-</div>
             </div>
           </div>
         </div>
-
-        {/* GitHub-style contribution graph concept */}
-        <div className="hero--activity--section">
-          <div className="activity--header">
-            <h3>Recent Activity</h3>
-            <span className="activity--subtitle">Building amazing projects</span>
-          </div>
-          
-          <div className="activity--grid">
-            {[...Array(7)].map((_, weekIndex) => (
-              <div key={weekIndex} className="activity--week">
-                {[...Array(7)].map((_, dayIndex) => {
-                  const intensity = Math.floor(Math.random() * 5);
-                  return (
-                    <div 
-                      key={dayIndex} 
-                      className={`activity--day activity--level-${intensity}`}
-                      title={`${intensity} contributions`}
-                    ></div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-          
-          <div className="activity--legend">
-            <span>Less</span>
-            <div className="legend--colors">
-              {[0, 1, 2, 3, 4].map(level => (
-                <div key={level} className={`legend--color activity--level-${level}`}></div>
-              ))}
-            </div>
-            <span>More</span>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-       <div className="scroll--indicator">
-  <div className="scroll--arrow">
-    <FontAwesomeIcon icon={faArrowDown} />
-  </div>
-  <span className="scroll--text">Scroll to explore</span>
-</div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

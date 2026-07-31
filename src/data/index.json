@@ -3,146 +3,150 @@
     {
       "id": "1",
       "src": "./img/tag-1.png",
-      "title": "Wordpress Development",
+      "title": "WordPress Development",
       "description": "Custom, responsive WordPress sites built for performance, SEO, and ease of use."
     },
     {
       "id": "2",
       "src": "./img/product-chain-1.png",
       "title": "MERN Stack Development",
-      "description": "Full-stack web apps using MongoDB, Express, React, and Node.js — fast, scalable, and modern.  "
+      "description": "Full-stack web apps using MongoDB, Express, React, and Node.js — fast, scalable, and modern."
     },
     {
       "id": "3",
       "src": "./img/feather-pen-1.png",
-      "title": "React Development",
-      "description": "Interactive, high-performance UIs with reusable components and responsive design"
+      "title": "React & Next.js Development",
+      "description": "Interactive, high-performance UIs with reusable components and responsive design."
     },
     {
       "id": "4",
       "src": "./img/feather-pen-2.png",
-      "title": "Graphics Designing",
-      "description": "Clean, creative visuals — logos, fliers, banners, and web assets that elevate your brand."
+      "title": "Flutter Mobile Development",
+      "description": "Cross-platform mobile apps for Android and iOS using Flutter and Firebase."
     }
   ],
   "portfolio": [
     {
       "id": "1",
-      "src": "./img/placeholder-image.png",
-      "title": "Gategold",
-      "description": "Gategold Nigeria Limited is a leading Gym equipment provider in Nigeria",
-      "buttonText": "View Live",
-      "link": "https://gategoldfitness.com/"
+      "src": "./img/student-wallet.png",
+      "title": "XPay Mobile App",
+      "description": "Cashless payment solution for 500+ students across 3 schools. Parents fund wallets remotely, students pay via QR code scanning. Reduced transaction time by 70%.",
+      "type": "Mobile App",
+      "tech": "Flutter · Firebase · QR Scanner",
+      "link": "",
+      "github": "https://github.com/tifewalker/flutter-app"
     },
     {
       "id": "2",
-      "src": "./img/placeholder-image-1.png",
-      "title": "Dunsun's Hub",
-      "description": "Dunsin's Hub is your one-stop destination for meals, drinks, groceries, and everything in between.",
-      "buttonText": "View Live",
-      "link": "https://dunsinshub.com/"
+      "src": "./img/loan-dashboard.png",
+      "title": "Secure Loan Dashboard",
+      "description": "Admin dashboard tracking 200+ loan applications with role-based access control and automated email notifications. Reduced loan processing time by 35%.",
+      "type": "Full Stack",
+      "tech": "React · TypeScript · Node.js · MongoDB",
+      "link": "",
+      "github": "https://github.com/tifewalker/secure-loan-web"
     },
     {
       "id": "3",
-      "src": "./img/placeholder-image-2.png",
-      "title": "Frictionless Lubricants Nig.Ltd.",
-      "description": "A lubrication services company with emphasis on Lubricants supplies, lubrication training, lubrication support services.",
-      "buttonText": "View Live",
-      "link": "https://frictionlesslubricants.com/"
-    }
-  ],
-  "portfolio2": [
-    {
-      "id": "1",
-      "src": "./img/placeholder-image-3.png",
-      "title": "Creastech",
-      "description": "A Nigerian ICT company committed to providing exceptional technology solutions to meet the evolving needs of businesses.",
-      "buttonText": "View Live",
-      "link": "https://creastech.com/"
+      "src": "./img/kids-wallet.png",
+      "title": "XPay Web Dashboard",
+      "description": "Full-stack web management system for the XPay cashless payment platform. Admin panel with real-time transaction tracking and wallet management.",
+      "type": "Full Stack",
+      "tech": "MongoDB · Express · React · Node.js",
+      "link": "",
+      "github": "https://github.com/tifewalker/XPAYWMS"
     },
     {
-      "id": "2",
+      "id": "4",
+      "src": "./img/placeholder-image-3.png",
+      "title": "Jomabel Health Foundation",
+      "description": "Professional website for a health foundation. Built with WordPress, optimised for SEO and donations.",
+      "type": "WordPress",
+      "tech": "WordPress · Elementor · PHP",
+      "link": "https://github.com/tifewalker/jomabel-health-foundation",
+      "github": "https://github.com/tifewalker/jomabel-health-foundation"
+    },
+    {
+      "id": "5",
+      "src": "./img/placeholder-image.png",
+      "title": "Gategold Fitness",
+      "description": "Leading gym equipment provider in Nigeria. Custom WordPress site optimised for SEO and performance.",
+      "type": "WordPress",
+      "tech": "WordPress · Elementor · PHP",
+      "link": "https://gategoldfitness.com/",
+      "github": ""
+    },
+    {
+      "id": "6",
+      "src": "./img/placeholder-image-1.png",
+      "title": "Dunsin's Hub",
+      "description": "One-stop destination for meals, drinks and groceries. WordPress e-commerce with WooCommerce integration.",
+      "type": "WordPress",
+      "tech": "WordPress · WooCommerce · PHP",
+      "link": "https://dunsinshub.com/",
+      "github": ""
+    },
+    {
+      "id": "7",
       "src": "./img/placeholder-image-4.png",
       "title": "Big World Solar Energy",
-      "description": "The best energy solution depends on several factors, including your specific needs, location, budget, and environmental considerations.",
-      "buttonText": "View Live",
-      "link": "https://bigworldsolar.com/"
+      "description": "Solar energy solutions company website. Built for lead generation with SEO optimisation.",
+      "type": "WordPress",
+      "tech": "WordPress · Elementor · PHP",
+      "link": "https://bigworldsolar.com/",
+      "github": ""
     },
     {
-      "id": "3",
+      "id": "8",
       "src": "./img/placeholder-image-2.png",
-      "title": "Frictionless Lubricants Nig.Ltd.",
-      "description": "A lubrication services company with emphasis on Lubricants supplies, lubrication training, lubrication support services.",
-      "buttonText": "View Live",
-      "link": "https://frictionlesslubricants.com/"
+      "title": "Frictionless Lubricants",
+      "description": "Lubrication services company with emphasis on lubricant supplies, training and support services.",
+      "type": "WordPress",
+      "tech": "WordPress · Elementor · PHP",
+      "link": "https://frictionlesslubricants.com/",
+      "github": ""
+    },
+    {
+      "id": "9",
+      "src": "./img/placeholder-image-3.png",
+      "title": "Creastech Limited",
+      "description": "Nigerian ICT company website committed to providing exceptional technology solutions for businesses.",
+      "type": "WordPress",
+      "tech": "WordPress · Elementor · PHP",
+      "link": "https://creastech.com/",
+      "github": ""
     }
   ],
   "testimonial": [
     {
       "id": "1",
-      "count": "5",
       "src": "./img/cert1.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Dianne Russel",
-      "author_designation": "Starbucks"
+      "author_name": "Certificate 1",
+      "author_designation": "2024"
     },
     {
       "id": "2",
-      "count": "5",
       "src": "./img/cert2.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kristin Watson",
-      "author_designation": "Louis Vuitton"
+      "author_name": "Certificate 2",
+      "author_designation": "2024"
     },
     {
       "id": "3",
-      "count": "5",
       "src": "./img/cert3.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kathryn Murphy",
-      "author_designation": "McDonald's"
+      "author_name": "Certificate 3",
+      "author_designation": "2023"
     },
     {
       "id": "4",
-      "count": "5",
       "src": "./img/cert4.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kathryn Murphy",
-      "author_designation": "McDonald's"
-    }
-  ],
-   "testimonial2": [
+      "author_name": "Certificate 4",
+      "author_designation": "2023"
+    },
     {
-      "id": "1",
-      "count": "5",
+      "id": "5",
       "src": "./img/cert5.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Dianne Russel",
-      "author_designation": "Starbucks"
-    },
-    {
-      "id": "2",
-      "count": "5",
-      "src": "./img/cert2.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kristin Watson",
-      "author_designation": "Louis Vuitton"
-    },
-    {
-      "id": "3",
-      "count": "5",
-      "src": "./img/cert3.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kathryn Murphy",
-      "author_designation": "McDonald's"
-    },
-    {
-      "id": "4",
-      "count": "5",
-      "src": "./img/cert4.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kathryn Murphy",
-      "author_designation": "McDonald's"
+      "author_name": "Certificate 5",
+      "author_designation": "2022"
     }
   ]
 }
