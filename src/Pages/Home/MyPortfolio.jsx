@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 // Replace `src` with a real screenshot path (e.g. "./img/portfolio/africa-prudential.png")
 // once you have one. Until then, `visual` renders an abstract mockup matching each category.
 const PROJECTS = [
-  {
-    title: "Africa Prudential — Unified CRM & Support",
+ {
+    title: "A Nigerian Financial Services Company — Unified CRM & Support",
     tag: "CRM & Automation",
     year: "2024",
     visual: "crm",
@@ -14,7 +14,7 @@ const PROJECTS = [
       "Unified social media, WhatsApp, live chat, and email into one Zoho CRM Plus system — with automated departmental routing, webhook integrations, and a single cross-channel analytics dashboard replacing what used to be a fragmented, multi-app workflow.",
   },
   {
-    title: "ASHA Microfinance Bank — CRM & Call Center Setup",
+    title: "A Nigerian Microfinance Bank — CRM & Call Center Setup",
     tag: "Call Center + CRM",
     year: "2024",
     visual: "callcenter",
