@@ -1,58 +1,66 @@
 import { useState, useEffect, useRef } from 'react';
 
-// ── Project data ──────────────────────────────────────────────
-// Replace `src` with a real screenshot path (e.g. "./img/portfolio/africa-prudential.png")
-// once you have one. Until then, `visual` renders an abstract mockup matching each category.
+// ── Main project data ──────────────────────────────────────────
 const PROJECTS = [
  {
     title: "A Nigerian Financial Services Company — Unified CRM & Support",
     tag: "CRM & Automation",
-    year: "2024",
     visual: "crm",
-    src: null,
+    src: "/img/zohocrmplus.png",
+    link: null,
     description:
       "Unified social media, WhatsApp, live chat, and email into one Zoho CRM Plus system — with automated departmental routing, webhook integrations, and a single cross-channel analytics dashboard replacing what used to be a fragmented, multi-app workflow.",
   },
   {
     title: "A Nigerian Microfinance Bank — CRM & Call Center Setup",
     tag: "Call Center + CRM",
-    year: "2024",
     visual: "callcenter",
-    src: null,
+    src: "/img/incoming-call-crm-2021-12.png",
+    link: null,
     description:
       "Implemented Zoho CRM Plus alongside a full HoduCC call center setup, including IVR configuration, and connected the call center directly into CRM Plus — so agents handle calls from within the same CRM instead of switching between separate systems.",
   },
   {
     title: "XPay — Payment & Transaction Management System",
     tag: "Lead Engineer · Web + Mobile",
-    year: "2023",
     visual: "payments",
-    src: null,
+    src: "/img/xpay-flyer1.png",
+    link: "https://app.xpay.ng/",
+    playStoreLink: null,
     description:
       "Led development of XPay end-to-end — both the web platform and the Flutter mobile app — replacing fragmented, manual payment handling with one centralized system. Built real-time transaction tracking (pending/successful/failed), automated validation workflows, webhook-based integrations with internal business tools, and reporting dashboards for transaction volume and payment status — giving the business a single source of truth instead of manual reconciliation.",
   },
   {
     title: "KONECT Worksuite — Full-Stack CRM & Business Platform",
     tag: "Team Lead · MERN Stack",
-    year: "2024 – Present",
     visual: "crm",
-    src: null,
+    src: "/img/konect_showcase_v3.png",
+    link: "https://konect-crm-client.onrender.com/",
     description:
       "Leading development of KONECT Worksuite — an in-house, multi-module business platform covering CRM, Help Desk, Live Chat & Voice (SalesIQ), Email Campaigns, Project Management, Invoices, Workflows, and Analytics, built on the MERN stack. Designed to be leaner and more tightly integrated than existing multi-module SaaS platforms, targeting the Nigerian SME market first, priced in Naira, with a roadmap to expand across Africa and internationally.",
   },
   {
     title: "SecureLoan — Loan Processing & Risk Management System",
     tag: "Full-Stack · Lead Engineer",
-    year: "2023",
     visual: "loan",
-    src: null,
+    src: "/img/secureloan.png",
+    link: "https://secure-loan-web.onrender.com/",
     description:
       "Designed and built SecureLoan to replace manual, spreadsheet-and-email-based loan processing with a centralized system — rule-based approval workflows, a borrower verification layer, end-to-end lifecycle tracking from application through disbursement to repayment, and dashboards for loan volume, approval rates, and risk indicators. Turned an inconsistent, error-prone process into one with standardized decisions and full visibility at every stage.",
   },
 ];
 
+// ── Website projects (horizontal scroll strip) ──────────────────
+const WEBSITE_PROJECTS = [
+  { title: "Gate Gold Fitness", src: "/img/placeholder-image.png", link: "https://gategoldfitness.com" },
+  { title: "Creastech", src: "/img/placeholder-image-3.png", link: "https://creastech.com/" },
+  { title: "Frictionless Lubricants", src: "/img/placeholder-image-2.png", link: "https://frictionlesslubricants.com/" },
+  { title: "Website Project 4", src: "/img/placeholder-image-4.png", link: null },
+];
+
 export default function MyPortfolio() {
   const [isVisible, setIsVisible] = useState(false);
+  const [lightbox, setLightbox] = useState(null); // { src, title, link }
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -62,6 +70,12 @@ export default function MyPortfolio() {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
   return (
@@ -157,6 +171,7 @@ export default function MyPortfolio() {
           overflow: hidden;
           background: #f7f8fb;
           position: relative;
+          cursor: zoom-in;
         }
 
         .project--visual img {
@@ -164,6 +179,17 @@ export default function MyPortfolio() {
           height: 100%;
           object-fit: cover;
           display: block;
+          animation: fadeInImg 0.35s ease;
+          transition: transform 0.3s ease;
+        }
+
+        .project--visual:hover img {
+          transform: scale(1.03);
+        }
+
+        @keyframes fadeInImg {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         .project--meta--row {
@@ -184,11 +210,6 @@ export default function MyPortfolio() {
           border-radius: 20px;
         }
 
-        .project--year {
-          font-size: 12px;
-          color: rgba(20,33,61,0.4);
-        }
-
         .project--title {
           font-size: 19px;
           font-weight: 700;
@@ -201,8 +222,41 @@ export default function MyPortfolio() {
           font-size: 14px;
           line-height: 1.75;
           color: #5b6270;
-          margin: 0;
+          margin: 0 0 14px;
           max-width: 560px;
+        }
+
+        .project--links {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+
+        .project--link--btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: #ffffff;
+          background: #1f9d63;
+          padding: 7px 16px;
+          border-radius: 20px;
+          text-decoration: none;
+          transition: background 0.2s ease;
+        }
+
+        .project--link--btn:hover {
+          background: #178a54;
+          color: #ffffff;
+          text-decoration: none;
+        }
+
+        .project--private--note {
+          font-size: 12px;
+          color: rgba(20,33,61,0.4);
+          font-style: italic;
         }
 
         /* ── Abstract dashboard mockups (placeholders) ── */
@@ -274,6 +328,132 @@ export default function MyPortfolio() {
           border-right-color: #1f9d63;
         }
 
+        /* ── Website projects: horizontal scroll strip ── */
+        .websites--section {
+          margin-top: 64px;
+          padding-top: 48px;
+          border-top: 1px solid rgba(20,33,61,0.08);
+        }
+
+        .websites--heading {
+          font-size: 18px;
+          font-weight: 700;
+          color: #14213d;
+          margin: 0 0 6px;
+        }
+
+        .websites--subtext {
+          font-size: 13px;
+          color: rgba(20,33,61,0.45);
+          margin: 0 0 24px;
+        }
+
+        .websites--scroll {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          padding-bottom: 8px;
+          scroll-snap-type: x proximity;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .websites--scroll::-webkit-scrollbar {
+          height: 6px;
+        }
+        .websites--scroll::-webkit-scrollbar-thumb {
+          background: rgba(20,33,61,0.15);
+          border-radius: 10px;
+        }
+
+        .website--card {
+          flex: 0 0 auto;
+          width: 220px;
+          aspect-ratio: 16/10;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #f7f8fb;
+          border: 1px solid rgba(20,33,61,0.08);
+          cursor: zoom-in;
+          scroll-snap-align: start;
+          position: relative;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .website--card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(20,33,61,0.1);
+        }
+
+        .website--card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          animation: fadeInImg 0.35s ease;
+        }
+
+        .website--card--label {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          padding: 8px 10px;
+          background: linear-gradient(to top, rgba(20,33,61,0.75), transparent);
+          color: #ffffff;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        /* ── Lightbox ── */
+        .lightbox--overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(20,33,61,0.85);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+          padding: 40px;
+          box-sizing: border-box;
+          cursor: zoom-out;
+        }
+
+        .lightbox--content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 14px;
+        }
+
+        .lightbox--img {
+          max-width: 90vw;
+          max-height: 85vh;
+          border-radius: 10px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+          cursor: default;
+          object-fit: contain;
+        }
+
+        .lightbox--close {
+          position: absolute;
+          top: 24px;
+          right: 32px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.15);
+          color: #ffffff;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s ease;
+        }
+
+        .lightbox--close:hover {
+          background: rgba(255,255,255,0.28);
+        }
+
         @media (max-width: 800px) {
           .portfolio--inner { padding: 0 24px; }
           .project--row {
@@ -282,12 +462,15 @@ export default function MyPortfolio() {
             padding: 32px 0;
           }
           .project--visual { aspect-ratio: 16/9; }
+          .website--card { width: 180px; }
         }
 
         @media (max-width: 480px) {
           #MyPortfolio { padding: 56px 0; }
           .portfolio--headline { margin-bottom: 32px; }
           .project--title { font-size: 17px; }
+          .website--card { width: 160px; }
+          .lightbox--overlay { padding: 20px; }
         }
       `}</style>
 
@@ -304,9 +487,12 @@ export default function MyPortfolio() {
           <div className="portfolio--list">
             {PROJECTS.map((item, i) => (
               <div className="project--row" key={i}>
-                <div className="project--visual">
+                <div
+                  className="project--visual"
+                  onClick={() => item.src && setLightbox({ src: item.src, title: item.title, link: item.link })}
+                >
                   {item.src ? (
-                    <img src={item.src} alt={item.title} />
+                    <img src={item.src} alt={item.title} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
                   ) : (
                     <DashboardMock kind={item.visual} />
                   )}
@@ -314,17 +500,64 @@ export default function MyPortfolio() {
                 <div>
                   <div className="project--meta--row">
                     <span className="project--tag">{item.tag}</span>
-                    <span className="project--year">{item.year}</span>
                   </div>
                   <h3 className="project--title">{item.title}</h3>
                   <p className="project--desc">{item.description}</p>
+                  <div className="project--links">
+                    {item.link && (
+                      <a href={item.link} target="_blank" rel="noreferrer" className="project--link--btn">
+                        View Live ↗
+                      </a>
+                    )}
+                    {item.playStoreLink && (
+                      <a href={item.playStoreLink} target="_blank" rel="noreferrer" className="project--link--btn">
+                        Google Play ↗
+                      </a>
+                    )}
+                    {!item.link && (
+                      <span className="project--private--note">Private client implementation — no public link available</span>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Website projects — horizontal scroll, tap to enlarge */}
+          <div className="websites--section">
+            <h3 className="websites--heading">Website Projects</h3>
+            <p className="websites--subtext">Tap any thumbnail to see it larger</p>
+            <div className="websites--scroll">
+              {WEBSITE_PROJECTS.map((site, i) => (
+                <div
+                  className="website--card"
+                  key={i}
+                  onClick={() => setLightbox({ src: site.src, title: site.title, link: site.link })}
+                >
+                  <img src={site.src} alt={site.title} loading="lazy" decoding="async" />
+                  <div className="website--card--label">{site.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
+
+      {/* Lightbox overlay — shared by both project images and website thumbnails */}
+      {lightbox && (
+        <div className="lightbox--overlay" onClick={() => setLightbox(null)}>
+          <button className="lightbox--close" onClick={() => setLightbox(null)} aria-label="Close">✕</button>
+          <div className="lightbox--content" onClick={(e) => e.stopPropagation()}>
+            <img src={lightbox.src} alt={lightbox.title} className="lightbox--img" />
+            {lightbox.link && (
+              <a href={lightbox.link} target="_blank" rel="noreferrer" className="project--link--btn">
+                Visit Site ↗
+              </a>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }

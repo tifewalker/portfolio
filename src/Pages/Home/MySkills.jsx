@@ -6,35 +6,35 @@ const SERVICES = [
     title: "CRM & Business Systems",
     tech: ["Zoho CRM Plus", "Zoho Desk", "SalesIQ", "Zoho Analytics"],
     description:
-      "End-to-end CRM implementation — ticketing automation, live chat, departmental routing, and unified analytics dashboards that give teams real operational visibility.",
+      "End-to-end CRM implementation ticketing automation, live chat, departmental routing, and unified analytics dashboards that give teams real operational visibility.",
   },
   {
     number: "02",
     title: "Call Center Solutions",
     tech: ["HoduCC", "SIP/VoIP", "Call Routing", "Reporting"],
     description:
-      "Full contact center setup — queues, agents, campaigns, and disposition frameworks, configured and tuned for real support and sales operations.",
+      "Full contact center setup queues, agents, campaigns, and disposition frameworks, configured and tuned for real support and sales operations.",
   },
   {
     number: "03",
     title: "Workflow Automation",
     tech: ["Webhooks", "REST APIs", "Third-Party Integrations"],
     description:
-      "Connecting systems so data moves on its own — automated handoffs between CRM, internal tools, and third-party platforms, removing manual re-entry.",
+      "Connecting systems so data moves on its own automated handoffs between CRM, internal tools, and third-party platforms, removing manual re-entry.",
   },
   {
     number: "04",
     title: "Full-Stack Development",
     tech: ["React", "Node.js", "MongoDB", "TypeScript"],
     description:
-      "Custom web applications built end-to-end with the MERN stack — from database design to polished, production-ready interfaces.",
+      "Custom web applications built end-to-end with the MERN stack from database design to polished, production-ready interfaces.",
   },
   {
     number: "05",
     title: "API & Systems Integration",
     tech: ["REST", "GraphQL", "OAuth", "Cloud Deployment"],
     description:
-      "Linking the software you already use to the software you need — authentication, data sync, and integrations built to be reliable in production.",
+      "Linking the software you already use to the software you need authentication, data sync, and integrations built to be reliable in production.",
   },
 ];
 
@@ -429,7 +429,7 @@ export default function MySkills() {
                 Building systems that <span>run the business</span>, not just the interface
               </h2>
               <p className="skills--lead">
-                From CRM and call center platforms to custom full-stack applications —
+                From CRM and call center platforms to custom full-stack applications 
                 I design and implement the systems businesses actually run on, then
                 connect them so they work together.
               </p>
