@@ -12,7 +12,7 @@ const TECHNOLOGIES = [
   { name: "Tailwind",   src: "./img/tech/tailwind.png" },
   { name: "MySQL",      src: "./img/tech/mysql.png" },
   { name: "Firebase",   src: "./img/tech/firebase.png" },
-  { name: "Git",        src: "./img/tech/git.png" },
+  { name: "Git",        src: "./img/tech/Git.png" },
   { name: "Ubuntu",     src: "./img/tech/ubuntu.png" },
   { name: "WordPress",  src: "./img/tech/wordpress.png" },
 ];
