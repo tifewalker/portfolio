@@ -51,11 +51,12 @@ const PROJECTS = [
 ];
 
 // ── Website projects (horizontal scroll strip) ──────────────────
+// ── Website projects (horizontal scroll strip) ──────────────────
 const WEBSITE_PROJECTS = [
-  { title: "Gate Gold Fitness", src: "/img/placeholder-image.png", link: "https://gategoldfitness.com" },
-  { title: "Creastech", src: "/img/placeholder-image-3.png", link: "https://creastech.com/" },
-  { title: "Frictionless Lubricants", src: "/img/placeholder-image-2.png", link: "https://frictionlesslubricants.com/" },
-  { title: "Website Project 4", src: "/img/placeholder-image-4.png", link: null },
+  { title: "Gate Gold Fitness", thumb: "/img/placeholder-image.webp", src: "/img/placeholder-image.webp", link: "https://gategoldfitness.com" },
+  { title: "Creastech", thumb: "/img/placeholder-image-3.jpg", src: "/img/placeholder-image-3.jpg", link: "https://creastech.com/" },
+  { title: "Frictionless Lubricants", thumb: "/img/placeholder-image-2.jpg", src: "/img/placeholder-image-2.jpg", link: "https://frictionlesslubricants.com/" },
+  { title: "Website Project 4", thumb: "/img/placeholder-image-4.jpg", src: "/img/placeholder-image-4.jpg", link: null },
 ];
 
 export default function MyPortfolio() {
@@ -534,7 +535,7 @@ export default function MyPortfolio() {
                   key={i}
                   onClick={() => setLightbox({ src: site.src, title: site.title, link: site.link })}
                 >
-                  <img src={site.src} alt={site.title} loading="lazy" decoding="async" />
+                  <img src={site.thumb} alt={site.title} loading="lazy" decoding="async" />
                   <div className="website--card--label">{site.title}</div>
                 </div>
               ))}
