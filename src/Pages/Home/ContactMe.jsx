@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export default function ContactMe() {
   const form = useRef(null);
@@ -19,18 +18,35 @@ export default function ContactMe() {
     return () => observer.disconnect();
   }, []);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
     if (!form.current) { setIsSubmitting(false); return; }
 
-    emailjs
-      .sendForm("service_i3gsg8q", "template_k66u0ks", form.current, "S2sEAG-6Jz8gkWo_S")
-      .then(
-        () => { setSubmitStatus("cmc-success"); form.current.reset(); setIsSubmitting(false); },
-        () => { setSubmitStatus("cmc-error"); setIsSubmitting(false); }
-      );
+    const formData = new FormData(form.current);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        form.current.reset();
+      } else {
+        console.error("Web3Forms send failed:", result);
+        setSubmitStatus("error");
+      }
+    } catch (err) {
+      console.error("Web3Forms network error:", err);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -479,10 +495,10 @@ export default function ContactMe() {
         <div className="cmc-contact--body">
 
           <div className="cmc-contact--info">
-            <h2 className="cmc-cmc-contact--info--headline">
+            <h2 className="cmc-contact--info--headline">
               Let's Work <span>Together</span>
             </h2>
-            <p className="cmc-cmc-contact--info--text">
+            <p className="cmc-contact--info--text">
               Based in Lagos, Nigeria — working with clients globally. Whether you
               need a CRM or call center implementation, workflow automation, or a
               full-stack build, I'm ready to help.
@@ -517,7 +533,7 @@ export default function ContactMe() {
                 <div className="cmc-detail--text--col">
                   <span className="cmc-detail--label">Status</span>
                   <span className="cmc-detail--value cmc-online">
-                    <span className="cmc-cmc-online--dot"></span>
+                    <span className="cmc-online--dot"></span>
                     Available for new projects
                   </span>
                 </div>
@@ -531,18 +547,21 @@ export default function ContactMe() {
               <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="cmc-contact--social--btn" aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
+              <a href="https://www.instagram.com/im_tifewalker" className="cmc-contact--social--btn" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
               <a href="https://x.com/tife_d_walker?s=21" className="cmc-contact--social--btn" aria-label="Twitter">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
           </div>
 
-          <div className="cmc-cmc-contact--form--wrap">
+          <div className="cmc-contact--form--wrap">
             <span className="cmc-form--section--label">Send a Message</span>
 
-            {submitStatus === "cmc-success" && (
+            {submitStatus === "success" && (
               <div className="cmc-form--status cmc-success">
-                <span className="cmc-cmc-form--status--icon">✓</span>
+                <span className="cmc-form--status--icon">✓</span>
                 <div>
                   <strong>Message sent!</strong>
                   <p>I'll get back to you within 24 hours.</p>
@@ -550,9 +569,9 @@ export default function ContactMe() {
               </div>
             )}
 
-            {submitStatus === "cmc-error" && (
+            {submitStatus === "error" && (
               <div className="cmc-form--status cmc-error">
-                <span className="cmc-cmc-form--status--icon">!</span>
+                <span className="cmc-form--status--icon">!</span>
                 <div>
                   <strong>Something went wrong.</strong>
                   <p>Please email me directly at olawuyiboluwatife2@gmail.com</p>
@@ -561,6 +580,9 @@ export default function ContactMe() {
             )}
 
             <form ref={form} className="cmc-contact--form" onSubmit={sendEmail}>
+              <input type="hidden" name="access_key" value="e8a5aacc-845f-454b-a837-22109e82be00" />
+              <input type="hidden" name="subject" value="New message from portfolio site" />
+              <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
               <div className="cmc-form--row">
                 <div className="cmc-form--group">
                   <label className="cmc-form--label" htmlFor="first-name">
@@ -645,6 +667,9 @@ export default function ContactMe() {
             </a>
             <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="cmc-footer--social--link" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+            <a href="https://www.instagram.com/im_tifewalker" className="cmc-footer--social--link" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a href="https://x.com/tife_d_walker?s=21" className="cmc-footer--social--link" aria-label="Twitter">
               <FontAwesomeIcon icon={faTwitter} />
