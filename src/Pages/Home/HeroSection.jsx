@@ -201,12 +201,12 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero--description">
-              I design and implement business systems, including CRM platforms, call center solutions, and workflow automation, alongside building custom full-stack applications using the MERN stack.
+              I design and implement business systems, including CRM platforms, call center solutions, and workflow automation, alongside building custom full-stack applications using the MERN stack. Currently an Application Engineer at Creastech Limited, and founder of KONECT Worksuite, a multi-module SaaS platform for African SMEs.
             </p>
 
             <a
-              href="/img/Boluwatife_Olawuyi_frontendcv.pdf"
-              download="Boluwatife_Olawuyi_frontendcv.pdf"
+              href="/img/Boluwatife_Olawuyi_ApplicationEngineer_CV.pdf"
+              download="Boluwatife_Olawuyi_ApplicationEngineer_CV.pdf"
               className="hero--cta"
             >
               Download Resume

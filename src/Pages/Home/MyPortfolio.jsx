@@ -32,12 +32,12 @@ const PROJECTS = [
   },
   {
     title: "KONECT Worksuite — Full-Stack CRM & Business Platform",
-    tag: "Team Lead · MERN Stack",
+    tag: "Founder · MERN Stack",
     visual: "crm",
     src: "/img/konect_showcase_v3.png",
     link: "https://konect-crm-client.onrender.com/",
     description:
-      "Leading development of KONECT Worksuite — an in-house, multi-module business platform covering CRM, Help Desk, Live Chat & Voice (SalesIQ), Email Campaigns, Project Management, Invoices, Workflows, and Analytics, built on the MERN stack. Designed to be leaner and more tightly integrated than existing multi-module SaaS platforms, targeting the Nigerian SME market first, priced in Naira, with a roadmap to expand across Africa and internationally.",
+      "Founded and built KONECT Worksuite from the ground up — a multi-module business platform covering CRM, Help Desk, Live Chat & Voice (SalesIQ), Email Campaigns, Project Management, Invoices, Workflows, and Analytics, built on the MERN stack. Designed to be leaner and more tightly integrated than existing multi-module SaaS platforms, targeting the Nigerian SME market first, priced in Naira, with a roadmap to expand across Africa and internationally.",
   },
   {
     title: "SecureLoan — Loan Processing & Risk Management System",
@@ -51,10 +51,9 @@ const PROJECTS = [
 ];
 
 // ── Website projects (horizontal scroll strip) ──────────────────
-// ── Website projects (horizontal scroll strip) ──────────────────
 const WEBSITE_PROJECTS = [
   { title: "Gate Gold Fitness", thumb: "/img/placeholder-image.webp", src: "/img/placeholder-image.webp", link: "https://gategoldfitness.com" },
-  { title: "Creastech", thumb: "/img/placeholder-image-3.jpg", src: "/img/placeholder-image-3.jpg", link: "https://creastech.com/" },
+  { title: "Creastech", thumb: "/img/placeholder-image-1.webp", src: "/img/placeholder-image-1.webp", link: "https://creastech.com/" },
   { title: "Frictionless Lubricants", thumb: "/img/placeholder-image-2.jpg", src: "/img/placeholder-image-2.jpg", link: "https://frictionlesslubricants.com/" },
   { title: "Website Project 4", thumb: "/img/placeholder-image-4.jpg", src: "/img/placeholder-image-4.jpg", link: null },
 ];
