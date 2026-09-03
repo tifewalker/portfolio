@@ -489,7 +489,7 @@ export default function MySkills() {
               <span className="strip--label">Clients Served</span>
             </div>
             <div className="strip--stat">
-              <span className="strip--number">3+</span>
+              <span className="strip--number">5+</span>
               <span className="strip--label">Years Experience</span>
             </div>
           </div>
