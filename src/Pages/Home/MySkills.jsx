@@ -1,499 +1,518 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 const SERVICES = [
   {
-    number: "01",
-    title: "CRM & Business Systems",
-    tech: ["Zoho CRM Plus", "Zoho Desk", "SalesIQ", "Zoho Analytics"],
+    title: "AI Engineering and Agent Development",
+    tech: [
+      "LLM Integration",
+      "AI Agents",
+      "Knowledge Bases",
+      "AWS Deployment",
+      "Backend Workflows",
+    ],
     description:
-      "End-to-end CRM implementation ticketing automation, live chat, departmental routing, and unified analytics dashboards that give teams real operational visibility.",
+      "Building practical AI systems that do more than generate responses. I develop and integrate AI agents, connect them to business data and backend services, deploy models, and create workflows that can support real customer interactions. My experience includes deploying an AI agent that operates in production and handles customer conversations.",
   },
   {
-    number: "02",
-    title: "Call Center Solutions",
-    tech: ["HoduCC", "SIP/VoIP", "Call Routing", "Reporting"],
+    title: "CRM and Business Systems",
+    tech: [
+      "Zoho CRM Plus",
+      "Zoho Desk",
+      "SalesIQ",
+      "Zoho Analytics",
+      "Zoho Finance",
+    ],
     description:
-      "Full contact center setup queues, agents, campaigns, and disposition frameworks, configured and tuned for real support and sales operations.",
+      "Implementing and improving business systems that help teams manage customers, sales, support and daily operations. From CRM configuration and ticketing workflows to customer communication, reporting and finance applications, I focus on making systems work around actual business processes.",
   },
   {
-    number: "03",
     title: "Workflow Automation",
-    tech: ["Webhooks", "REST APIs", "Third-Party Integrations"],
+    tech: [
+      "Webhooks",
+      "REST APIs",
+      "Business Process Automation",
+      "System Integration",
+    ],
     description:
-      "Connecting systems so data moves on its own automated handoffs between CRM, internal tools, and third-party platforms, removing manual re-entry.",
+      "Reducing repetitive work by connecting applications and automating how information moves between them. I design workflows that handle data exchange, notifications, customer processes and operational handoffs, helping businesses spend less time on manual tasks.",
   },
   {
-    number: "04",
-    title: "Full-Stack Development",
-    tech: ["React", "Node.js", "MongoDB", "TypeScript"],
+    title: "AI-Powered Applications",
+    tech: [
+      "LLM APIs",
+      "Node.js",
+      "React",
+      "AI Integration",
+      "Backend Services",
+    ],
     description:
-      "Custom web applications built end-to-end with the MERN stack from database design to polished, production-ready interfaces.",
+      "Integrating artificial intelligence into software products and business applications. This includes intelligent assistants, customer-facing AI features, information retrieval and automated processing, with the backend services and integrations needed to make these capabilities useful.",
   },
   {
-    number: "05",
-    title: "API & Systems Integration",
-    tech: ["REST", "GraphQL", "OAuth", "Cloud Deployment"],
+    title: "Full-Stack and Application Development",
+    tech: ["React", "Node.js", "TypeScript", "MongoDB", "SQL", "Flutter"],
     description:
-      "Linking the software you already use to the software you need authentication, data sync, and integrations built to be reliable in production.",
+      "Developing applications from the backend to the user interface. I work across application architecture, database design, server-side logic, API development and responsive interfaces to build software around specific operational and customer needs.",
   },
+  {
+    title: "API and Systems Integration",
+    tech: ["REST", "GraphQL", "OAuth", "Webhooks", "Cloud Deployment"],
+    description:
+      "Making different software platforms communicate reliably. I build integrations that connect business applications, synchronise information, handle authentication and support dependable data exchange between internal systems and third-party services.",
+  },
+  {
+    title: "Business Analysis and Solution Design",
+    tech: [
+      "Requirements Gathering",
+      "Process Mapping",
+      "BRD / FRD",
+      "User Stories",
+      "UAT",
+    ],
+    description:
+      "Understanding the business problem before choosing or building a solution. I work with stakeholders to gather requirements, analyse existing processes, identify gaps, document functional expectations and translate business needs into practical technical deliverables.",
+  },
+  {
+    title: "Contact Centre and Customer Experience Systems",
+    tech: ["HoduCC", "SIP / VoIP", "Call Routing", "IVR", "Reporting"],
+    description:
+      "Configuring contact centre environments for customer support and sales operations. My experience includes call routing, agent and queue configuration, IVR workflows, campaign setup and reporting, alongside integrations with CRM and customer management platforms.",
+  },
+];
+
+const CORE_TECHNOLOGIES = [
+  "Zoho CRM Plus",
+  "Node.js",
+  "React",
+  "REST APIs",
+  "Webhooks",
+  "MongoDB",
+  "AWS",
+  "AI Agent Development",
+  "HoduCC",
+  "TypeScript",
+];
+
+const STATS = [
+  { value: "5+", label: "years of experience" },
+  { value: "Production", label: "AI agent experience" },
+  { value: "End to end", label: "application delivery" },
 ];
 
 export default function MySkills() {
   const [openIndex, setOpenIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
         #mySkills {
-          background: #f7f8fb;
-          padding: 80px 0;
-          font-family: 'Space Grotesk', sans-serif;
+          --ink: #0e1a2b;
+          --muted: #566074;
+          --paper: #f3f5f8;
+          --line: #d5dbe5;
+          --coral: #ff5a47;
+          --navy: #16294a;
+          background: #ffffff;
+          padding: 100px 0;
+          font-family: 'IBM Plex Sans', sans-serif;
+          color: var(--ink);
+          overflow: hidden;
         }
 
-        .skills--inner {
-          max-width: 1200px;
+        #mySkills *,
+        #mySkills *::before,
+        #mySkills *::after { box-sizing: border-box; }
+
+        #mySkills .skills--inner {
+          max-width: 1240px;
           margin: 0 auto;
           padding: 0 48px;
-          box-sizing: border-box;
         }
 
-        /* Section label */
-        .skills--eyebrow {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 48px;
-          opacity: ${isVisible ? 1 : 0};
-          transform: ${isVisible ? 'translateY(0)' : 'translateY(16px)'};
-          transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .skills--eyebrow--icon {
-          width: 18px;
-          height: 18px;
-          border: 1px solid rgba(20,33,61,0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .skills--eyebrow--icon::after {
-          content: '';
-          width: 6px;
-          height: 6px;
-          background: #1f9d63;
-          display: block;
-        }
-
-        .skills--eyebrow--text {
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.5);
-        }
-
-        /* Two-column layout */
-        .skills--layout {
+        /* Intro */
+        #mySkills .skills--intro {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
           gap: 64px;
-          align-items: start;
+          align-items: end;
+          margin-bottom: 64px;
         }
 
-        /* Left: Impact statement */
-        .skills--statement {
-          opacity: ${isVisible ? 1 : 0};
-          transform: ${isVisible ? 'translateY(0)' : 'translateY(24px)'};
-          transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
-          position: sticky;
-          top: 100px;
-        }
-
-        .skills--headline {
-          font-size: clamp(28px, 3.6vw, 38px);
-          font-weight: 700;
-          line-height: 1.25;
-          color: #14213d;
-          margin: 0 0 20px;
-        }
-
-        .skills--headline span {
-          color: #1f9d63;
-        }
-
-        .skills--lead {
-          font-size: 15px;
-          line-height: 1.8;
-          color: #5b6270;
-          margin: 0 0 36px;
-          max-width: 400px;
-        }
-
-        /* Tech stack pills */
-        .skills--stack--label {
-          font-size: 11px;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.4);
-          margin-bottom: 14px;
-        }
-
-        .skills--tech--pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-bottom: 36px;
-        }
-
-        .tech--pill {
-          font-size: 12px;
-          font-weight: 500;
-          color: #14213d;
-          background: #ffffff;
-          border: 1px solid rgba(20,33,61,0.12);
-          padding: 5px 12px;
-          transition: border-color 0.2s ease, color 0.2s ease;
-        }
-
-        .tech--pill:hover {
-          border-color: #1f9d63;
-          color: #1f9d63;
-        }
-
-        /* CTA */
-        .skills--cta {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          background: #1f9d63;
-          color: #ffffff;
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-          padding: 13px 26px;
-          border-radius: 40px;
-          border: none;
-          cursor: pointer;
-          text-decoration: none;
-          white-space: nowrap;
-          box-sizing: border-box;
-          transition: background 0.2s ease, transform 0.15s ease;
-        }
-
-        .skills--cta:hover {
-          background: #178a54;
-          color: #ffffff;
-          text-decoration: none;
-          transform: translateY(-1px);
-        }
-
-        .skills--cta--arrow {
-          font-size: 16px;
+        #mySkills .skills--headline {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: clamp(36px, 5vw, 68px);
           line-height: 1;
+          font-weight: 800;
+          letter-spacing: -0.045em;
+          margin: 0;
         }
 
-        /* Right: Accordion */
-        .skills--accordion {
-          opacity: ${isVisible ? 1 : 0};
-          transform: ${isVisible ? 'translateY(0)' : 'translateY(24px)'};
-          transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
-        }
-
-        .accordion--item {
-          border-top: 1px solid rgba(20,33,61,0.1);
-          cursor: pointer;
-          transition: background 0.2s ease;
-        }
-
-        .accordion--item:last-child {
-          border-bottom: 1px solid rgba(20,33,61,0.1);
-        }
-
-        .accordion--header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 20px 4px;
-          gap: 16px;
-        }
-
-        .accordion--left {
-          display: flex;
-          align-items: center;
-          gap: 18px;
-          min-width: 0;
-        }
-
-        .accordion--number {
-          font-size: 12px;
-          font-weight: 600;
-          color: rgba(20,33,61,0.3);
-          min-width: 22px;
-          flex-shrink: 0;
-        }
-
-        .accordion--title {
+        #mySkills .skills--lead {
           font-size: 16px;
-          font-weight: 600;
-          color: #14213d;
-          transition: color 0.2s ease;
-          letter-spacing: 0.01em;
-        }
-
-        .accordion--item.open .accordion--title {
-          color: #1f9d63;
-        }
-
-        .accordion--toggle {
-          width: 26px;
-          height: 26px;
-          border: 1px solid rgba(20,33,61,0.15);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-          font-size: 16px;
-          color: rgba(20,33,61,0.5);
-          line-height: 1;
-        }
-
-        .accordion--item.open .accordion--toggle {
-          background: #1f9d63;
-          border-color: #1f9d63;
-          color: #ffffff;
-        }
-
-        .accordion--body {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.35s ease, padding 0.35s ease;
-          padding: 0 4px 0 40px;
-        }
-
-        .accordion--item.open .accordion--body {
-          max-height: 220px;
-          padding: 0 4px 22px 40px;
-        }
-
-        .accordion--description {
-          font-size: 14px;
           line-height: 1.75;
-          color: #5b6270;
+          color: var(--muted);
           margin: 0 0 14px;
           max-width: 440px;
         }
 
-        .accordion--tags {
+        #mySkills .skills--lead:last-child { margin-bottom: 0; }
+
+        /* Accordion */
+        #mySkills .skills--accordion {
+          border-top: 2px solid var(--ink);
+        }
+
+        #mySkills .accordion--item {
+          border-bottom: 1px solid var(--line);
+        }
+
+        #mySkills .accordion--item.open {
+          background: var(--navy);
+          border-bottom-color: var(--navy);
+          color: #ffffff;
+        }
+
+        #mySkills .accordion--header {
+          width: 100%;
           display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 26px 24px;
+          border: 0;
+          background: transparent;
+          color: inherit;
+          text-align: left;
+          font-family: inherit;
+          cursor: pointer;
         }
 
-        .accordion--tag {
-          font-size: 11px;
-          font-weight: 600;
-          color: #1f9d63;
-          background: rgba(31,157,99,0.08);
-          border: 1px solid rgba(31,157,99,0.2);
-          padding: 3px 10px;
-        }
-
-        /* Bottom stats strip */
-        .skills--stats--strip {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1px;
-          background: rgba(20,33,61,0.08);
-          margin-top: 64px;
-          border-radius: 12px;
-          overflow: hidden;
-          opacity: ${isVisible ? 1 : 0};
-          transition: opacity 0.8s ease 0.4s;
-        }
-
-        .strip--stat {
-          background: #ffffff;
-          padding: 28px 24px;
-          text-align: center;
-        }
-
-        .strip--number {
-          font-size: 34px;
+        #mySkills .accordion--title {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: clamp(20px, 2.4vw, 30px);
           font-weight: 700;
-          color: #1f9d63;
-          line-height: 1;
-          display: block;
+          letter-spacing: -0.03em;
+          line-height: 1.2;
+          transition: transform 0.25s ease;
         }
 
-        .strip--label {
-          font-size: 12px;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.45);
-          margin-top: 8px;
-          display: block;
+        #mySkills .accordion--header:hover .accordion--title {
+          transform: translateX(6px);
         }
+
+        #mySkills .accordion--toggle {
+          position: relative;
+          width: 22px;
+          height: 22px;
+          flex-shrink: 0;
+        }
+
+        #mySkills .accordion--toggle::before,
+        #mySkills .accordion--toggle::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          margin-top: -1px;
+          background: currentColor;
+          transition: transform 0.3s ease, background 0.2s ease;
+        }
+
+        #mySkills .accordion--toggle::after { transform: rotate(90deg); }
+
+        #mySkills .accordion--item.open .accordion--toggle::before,
+        #mySkills .accordion--item.open .accordion--toggle::after {
+          background: var(--coral);
+        }
+
+        #mySkills .accordion--item.open .accordion--toggle::after {
+          transform: rotate(0deg);
+        }
+
+        #mySkills .accordion--body {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.35s ease;
+        }
+
+        #mySkills .accordion--item.open .accordion--body {
+          grid-template-rows: 1fr;
+        }
+
+        #mySkills .accordion--body--inner {
+          min-height: 0;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+          gap: 48px;
+          padding: 0 24px;
+        }
+
+        #mySkills .accordion--item.open .accordion--body--inner {
+          padding-bottom: 34px;
+        }
+
+        #mySkills .accordion--description {
+          font-size: 16px;
+          line-height: 1.75;
+          color: rgba(255, 255, 255, 0.82);
+          margin: 0;
+          max-width: 600px;
+        }
+
+        #mySkills .accordion--tech {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        #mySkills .accordion--tech li {
+          font-size: 14px;
+          font-weight: 500;
+          padding: 9px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        #mySkills .accordion--tech li:first-child {
+          border-top: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Core stack */
+        #mySkills .skills--stack {
+          display: grid;
+          grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+          gap: 64px;
+          margin-top: 88px;
+          align-items: start;
+        }
+
+        #mySkills .skills--stack--title {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: 28px;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          line-height: 1.15;
+          margin: 0 0 24px;
+        }
+
+        #mySkills .skills--cta {
+          display: inline-block;
+          background: var(--coral);
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 600;
+          padding: 16px 28px;
+          border-radius: 4px;
+          border: 2px solid var(--coral);
+          text-decoration: none;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        #mySkills .skills--cta:hover {
+          background: #e84634;
+          border-color: #e84634;
+          transform: translateY(-2px);
+        }
+
+        #mySkills .skills--stack--list {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: clamp(22px, 2.6vw, 34px);
+          font-weight: 500;
+          line-height: 1.45;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+          margin: 0;
+        }
+
+        /* Stats */
+        #mySkills .skills--stats {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          margin-top: 88px;
+          border-top: 2px solid var(--ink);
+        }
+
+        #mySkills .stat {
+          padding: 28px 24px 0 0;
+        }
+
+        #mySkills .stat + .stat {
+          padding-left: 28px;
+          border-left: 1px solid var(--line);
+        }
+
+        #mySkills .stat--value {
+          display: block;
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: clamp(30px, 4vw, 56px);
+          font-weight: 800;
+          letter-spacing: -0.045em;
+          line-height: 1;
+          margin-bottom: 10px;
+        }
+
+        #mySkills .stat--label {
+          font-size: 15px;
+          color: var(--muted);
+        }
+
+        #mySkills a:focus-visible,
+        #mySkills .accordion--header:focus-visible {
+          outline: 3px solid var(--coral);
+          outline-offset: -3px;
+        }
+
+        #mySkills .skills--cta:focus-visible { outline-offset: 4px; }
 
         /* Tablet */
         @media (max-width: 900px) {
-          .skills--layout {
+          #mySkills { padding: 76px 0; }
+          #mySkills .skills--inner { padding: 0 28px; }
+
+          #mySkills .skills--intro,
+          #mySkills .skills--stack {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 28px;
           }
-          .skills--statement {
-            position: static;
+
+          #mySkills .skills--stack { margin-top: 64px; }
+
+          #mySkills .accordion--body--inner {
+            grid-template-columns: 1fr;
+            gap: 24px;
           }
-          .skills--inner {
-            padding: 0 32px;
-          }
-          .skills--cta {
-            width: 100%;
-            max-width: 320px;
-            justify-content: center;
-          }
+
+          #mySkills .skills--stats { margin-top: 64px; }
         }
 
         /* Mobile */
-        @media (max-width: 600px) {
-          #mySkills {
-            padding: 56px 0;
+        @media (max-width: 560px) {
+          #mySkills { padding: 56px 0; }
+          #mySkills .skills--inner { padding: 0 20px; }
+          #mySkills .skills--intro { margin-bottom: 40px; }
+          #mySkills .accordion--header { padding: 20px 16px; }
+          #mySkills .accordion--body--inner { padding: 0 16px; }
+          #mySkills .accordion--description { font-size: 15px; }
+          #mySkills .skills--cta { display: block; text-align: center; }
+
+          #mySkills .skills--stats { grid-template-columns: 1fr; }
+
+          #mySkills .stat,
+          #mySkills .stat + .stat {
+            padding: 22px 0;
+            border-left: 0;
+            border-bottom: 1px solid var(--line);
           }
-          .skills--inner {
-            padding: 0 20px;
-          }
-          .skills--eyebrow {
-            margin-bottom: 32px;
-          }
-          .skills--headline {
-            font-size: 26px;
-          }
-          .skills--lead {
-            max-width: 100%;
-          }
-          .skills--cta {
-            width: 100%;
-            max-width: none;
-            justify-content: center;
-          }
-          .accordion--title {
-            font-size: 14px;
-          }
-          .accordion--body {
-            padding-left: 0;
-          }
-          .accordion--item.open .accordion--body {
-            padding-left: 0;
-          }
-          .accordion--description {
-            max-width: 100%;
-          }
-          .skills--stats--strip {
-            grid-template-columns: 1fr;
-          }
-          .strip--number {
-            font-size: 28px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          #mySkills *,
+          #mySkills *::before,
+          #mySkills *::after {
+            transition-duration: 0.01ms !important;
           }
         }
       `}</style>
 
-      <section id="mySkills" ref={sectionRef}>
+      <section id="mySkills" aria-labelledby="skills-heading">
         <div className="skills--inner">
+          {/* Intro */}
+          <div className="skills--intro">
+            <h2 id="skills-heading" className="skills--headline">
+              Business problems in, working systems out.
+            </h2>
 
-          {/* Eyebrow */}
-          <div className="skills--eyebrow">
-            <div className="skills--eyebrow--icon"></div>
-            <span className="skills--eyebrow--text">What I Do</span>
+            <div>
+              <p className="skills--lead">
+                I work across the full process of building business
+                technology, from understanding the problem and mapping
+                workflows to developing, integrating and deploying
+                practical solutions.
+              </p>
+              <p className="skills--lead">
+                My experience spans CRM implementation, business
+                applications, backend engineering, API integrations and
+                AI-powered automation. I don't just recommend technology.
+                I get involved in the technical work that makes it useful
+                in real business environments.
+              </p>
+            </div>
           </div>
 
-          <div className="skills--layout">
+          {/* Services */}
+          <div className="skills--accordion">
+            {SERVICES.map((service, index) => {
+              const isOpen = openIndex === index;
+              const panelId = `skill-service-panel-${index}`;
 
-            {/* Left: Statement */}
-            <div className="skills--statement">
-              <h2 className="skills--headline">
-                Building systems that <span>run the business</span>, not just the interface
-              </h2>
-              <p className="skills--lead">
-                From CRM and call center platforms to custom full-stack applications 
-                I design and implement the systems businesses actually run on, then
-                connect them so they work together.
-              </p>
-
-              <p className="skills--stack--label">Core Technologies</p>
-              <div className="skills--tech--pills">
-                {["Zoho CRM Plus", "HoduCC", "React", "Node.js", "MongoDB", "Webhooks", "TypeScript"].map(t => (
-                  <span key={t} className="tech--pill">{t}</span>
-                ))}
-              </div>
-
-              <a href="#Contact" className="skills--cta">
-                Start a Project
-                <span className="skills--cta--arrow">↗</span>
-              </a>
-            </div>
-
-            {/* Right: Accordion */}
-            <div className="skills--accordion">
-              {SERVICES.map((service, index) => (
+              return (
                 <div
-                  key={index}
-                  className={`accordion--item ${openIndex === index ? "open" : ""}`}
-                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                  key={service.title}
+                  className={`accordion--item ${isOpen ? "open" : ""}`}
                 >
-                  <div className="accordion--header">
-                    <div className="accordion--left">
-                      <span className="accordion--number">{service.number}</span>
-                      <span className="accordion--title">{service.title}</span>
-                    </div>
-                    <div className="accordion--toggle">
-                      {openIndex === index ? "−" : "+"}
-                    </div>
-                  </div>
-                  <div className="accordion--body">
-                    <p className="accordion--description">{service.description}</p>
-                    <div className="accordion--tags">
-                      {service.tech.map(t => (
-                        <span key={t} className="accordion--tag">{t}</span>
-                      ))}
+                  <button
+                    type="button"
+                    className="accordion--header"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  >
+                    <span className="accordion--title">{service.title}</span>
+                    <span className="accordion--toggle" aria-hidden="true" />
+                  </button>
+
+                  <div
+                    id={panelId}
+                    className="accordion--body"
+                    aria-hidden={!isOpen}
+                    inert={!isOpen ? "" : undefined}
+                  >
+                    <div className="accordion--body--inner">
+                      <p className="accordion--description">
+                        {service.description}
+                      </p>
+
+                      <ul className="accordion--tech">
+                        {service.tech.map((technology) => (
+                          <li key={technology}>{technology}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-
+              );
+            })}
           </div>
 
-          {/* Stats strip */}
-          <div className="skills--stats--strip">
-            <div className="strip--stat">
-              <span className="strip--number">20+</span>
-              <span className="strip--label">Projects Delivered</span>
+          {/* Core stack */}
+          <div className="skills--stack">
+            <div>
+              <h3 className="skills--stack--title">
+                The tools I reach for most
+              </h3>
+              <a href="#Contact" className="skills--cta">
+                Let's build something
+              </a>
             </div>
-            <div className="strip--stat">
-              <span className="strip--number">30+</span>
-              <span className="strip--label">Clients Served</span>
-            </div>
-            <div className="strip--stat">
-              <span className="strip--number">5+</span>
-              <span className="strip--label">Years Experience</span>
-            </div>
+
+            <p className="skills--stack--list">
+              {CORE_TECHNOLOGIES.join(", ")}.
+            </p>
           </div>
 
+          {/* Stats */}
+          <div className="skills--stats">
+            {STATS.map((stat) => (
+              <div className="stat" key={stat.label}>
+                <span className="stat--value">{stat.value}</span>
+                <span className="stat--label">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

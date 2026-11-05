@@ -1,28 +1,29 @@
-import { useRef, useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { useRef, useState } from "react";
+
+const SOCIALS = [
+  { label: "GitHub", href: "https://github.com/tifewalker" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/",
+  },
+  { label: "Instagram", href: "https://www.instagram.com/im_tifewalker" },
+  { label: "X", href: "https://x.com/tife_d_walker?s=21" },
+];
 
 export default function ContactMe() {
   const form = useRef(null);
-  const sectionRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    if (!form.current) { setIsSubmitting(false); return; }
+
+    if (!form.current) {
+      setIsSubmitting(false);
+      return;
+    }
 
     const formData = new FormData(form.current);
 
@@ -52,632 +53,604 @@ export default function ContactMe() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
         #Contact {
-          background: #ffffff;
-          font-family: 'Space Grotesk', sans-serif;
-          border-top: 1px solid rgba(20,33,61,0.08);
+          --ink: #0e1a2b;
+          --muted: #566074;
+          --paper: #f3f5f8;
+          --line: #d5dbe5;
+          --coral: #ff5a47;
+          background: var(--ink);
+          color: #ffffff;
+          font-family: 'IBM Plex Sans', sans-serif;
+          padding: 100px 0 0;
         }
 
-        /* ── FORM SECTION ── */
-        .cmc-contact--body {
-          max-width: 1100px;
+        #Contact *,
+        #Contact *::before,
+        #Contact *::after { box-sizing: border-box; }
+
+        #Contact .ct--inner {
+          max-width: 1240px;
           margin: 0 auto;
-          padding: 72px 48px;
-          box-sizing: border-box;
+          padding: 0 48px;
+        }
+
+        #Contact .ct--headline {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: clamp(38px, 6vw, 84px);
+          line-height: 0.98;
+          font-weight: 800;
+          letter-spacing: -0.045em;
+          max-width: 900px;
+          margin: 0 0 72px;
+        }
+
+        #Contact .ct--grid {
           display: grid;
-          grid-template-columns: 1fr 1.4fr;
-          gap: 64px;
+          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+          gap: 72px;
           align-items: start;
-          opacity: ${isVisible ? 1 : 0};
-          transform: ${isVisible ? 'translateY(0)' : 'translateY(24px)'};
-          transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+          padding-bottom: 96px;
         }
 
-        /* ── LEFT INFO ── */
-        .cmc-contact--info {
-          position: sticky;
-          top: 90px;
+        /* Left column */
+        #Contact .ct--text {
+          font-size: 17px;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.75);
+          max-width: 440px;
+          margin: 0 0 40px;
         }
 
-        .cmc-cmc-contact--info--headline {
-          font-size: clamp(24px, 3vw, 30px);
-          font-weight: 700;
-          line-height: 1.25;
-          color: #14213d;
-          margin: 0 0 16px;
+        #Contact .ct--details {
+          margin: 0;
+          padding: 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .cmc-cmc-contact--info--headline span {
-          color: #1f9d63;
-        }
-
-        .cmc-cmc-contact--info--text {
-          font-size: 14px;
-          line-height: 1.8;
-          color: #5b6270;
-          margin: 0 0 32px;
-          max-width: 340px;
-        }
-
-        .cmc-contact--details {
-          display: flex;
-          flex-direction: column;
-          gap: 0;
-          margin-bottom: 32px;
-          border: 1px solid rgba(20,33,61,0.08);
-          border-radius: 12px;
-          overflow: hidden;
-        }
-
-        .cmc-contact--detail--row {
-          display: flex;
-          align-items: center;
+        #Contact .ct--detail {
+          display: grid;
+          grid-template-columns: 130px minmax(0, 1fr);
           gap: 16px;
-          padding: 14px 18px;
-          border-bottom: 1px solid rgba(20,33,61,0.06);
-          transition: background 0.2s ease;
+          padding: 18px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .cmc-contact--detail--row:last-child {
-          border-bottom: none;
-        }
-
-        .cmc-contact--detail--row:hover {
-          background: #f7f8fb;
-        }
-
-        .cmc-detail--icon--box {
-          width: 32px;
-          height: 32px;
-          border-radius: 8px;
-          border: 1px solid rgba(20,33,61,0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
+        #Contact .ct--detail dt {
           font-size: 14px;
+          color: rgba(255, 255, 255, 0.6);
         }
 
-        .cmc-detail--text--col {
-          flex: 1;
-          min-width: 0;
+        #Contact .ct--detail dd {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 500;
+          overflow-wrap: anywhere;
         }
 
-        .cmc-detail--label {
-          font-size: 10px;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.4);
-          display: block;
-          margin-bottom: 2px;
-        }
-
-        .cmc-detail--value {
-          font-size: 13px;
-          color: #14213d;
-        }
-
-        .cmc-detail--value a {
-          color: #14213d;
+        #Contact .ct--detail a {
+          color: #ffffff;
           text-decoration: none;
-          transition: color 0.2s ease;
+          border-bottom: 2px solid var(--coral);
+          transition: border-color 0.2s ease;
         }
 
-        .cmc-detail--value a:hover {
-          color: #1f9d63;
-        }
+        #Contact .ct--detail a:hover { border-bottom-color: #ffffff; }
 
-        .cmc-detail--value.cmc-online {
-          color: #1f9d63;
-          display: flex;
+        #Contact .ct--available {
+          display: inline-flex;
           align-items: center;
-          gap: 7px;
-          font-weight: 600;
-        }
-
-        .cmc-cmc-online--dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background: #1f9d63;
-          box-shadow: 0 0 0 3px rgba(31,157,99,0.15);
-        }
-
-        .cmc-contact--socials {
-          display: flex;
           gap: 10px;
         }
 
-        .cmc-contact--social--btn {
-          width: 38px;
-          height: 38px;
-          border-radius: 8px;
-          border: 1px solid rgba(20,33,61,0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: rgba(20,33,61,0.5);
-          font-size: 15px;
-          text-decoration: none;
-          transition: border-color 0.2s ease, color 0.2s ease;
-        }
-
-        .cmc-contact--social--btn:hover {
-          border-color: #1f9d63;
-          color: #1f9d63;
-        }
-
-        /* ── RIGHT FORM ── */
-        .cmc-cmc-contact--form--wrap {
-          background: #ffffff;
-          border: 1px solid rgba(20,33,61,0.1);
-          border-radius: 16px;
-          padding: 36px;
-          box-shadow: 0 4px 24px rgba(20,33,61,0.04);
-        }
-
-        .cmc-form--section--label {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.4);
-          margin-bottom: 24px;
-          display: block;
-        }
-
-        .cmc-form--status {
-          padding: 14px 18px;
-          margin-bottom: 24px;
-          border-radius: 10px;
-          font-size: 13px;
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-        }
-
-        .cmc-form--status.cmc-success {
-          background: rgba(31,157,99,0.08);
-          border: 1px solid rgba(31,157,99,0.25);
-          color: #178a54;
-        }
-
-        .cmc-form--status.cmc-error {
-          background: rgba(220,50,50,0.06);
-          border: 1px solid rgba(220,50,50,0.2);
-          color: #c0392b;
-        }
-
-        .cmc-cmc-form--status--icon {
-          font-size: 16px;
+        #Contact .ct--available::before {
+          content: "";
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: #3ecf8e;
           flex-shrink: 0;
-          margin-top: 1px;
         }
 
-        .cmc-form--status strong {
-          display: block;
-          margin-bottom: 2px;
+        /* Form panel */
+        #Contact .ct--panel {
+          background: #ffffff;
+          color: var(--ink);
+          border-radius: 4px;
+          padding: 40px;
         }
 
-        .cmc-form--status p {
-          margin: 0;
-          opacity: 0.8;
-          font-size: 12px;
+        #Contact .ct--panel--title {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          font-size: 26px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          margin: 0 0 26px;
         }
 
-        .cmc-contact--form {
+        #Contact .ct--status {
+          padding: 14px 16px;
+          margin-bottom: 24px;
+          border-radius: 4px;
+          font-size: 14px;
+          line-height: 1.5;
+          border-left: 4px solid;
+        }
+
+        #Contact .ct--status strong { display: block; }
+
+        #Contact .ct--status p { margin: 2px 0 0; }
+
+        #Contact .ct--status.success {
+          background: #e8f6ef;
+          border-left-color: #1f9d63;
+          color: #14663f;
+        }
+
+        #Contact .ct--status.error {
+          background: #fdecea;
+          border-left-color: #d6382a;
+          color: #9c2419;
+        }
+
+        #Contact .ct--form {
           display: flex;
           flex-direction: column;
-          gap: 18px;
+          gap: 20px;
         }
 
-        .cmc-form--row {
+        #Contact .ct--row {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
         }
 
-        .cmc-form--group {
+        #Contact .ct--group {
           display: flex;
           flex-direction: column;
-          gap: 7px;
+          gap: 8px;
         }
 
-        .cmc-form--label {
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(20,33,61,0.5);
-          display: flex;
-          gap: 4px;
-          align-items: center;
-        }
-
-        .cmc-form--required {
-          color: #1f9d63;
-        }
-
-        .cmc-form--input,
-        .cmc-form--select,
-        .cmc-form--textarea {
-          background: #f7f8fb;
-          border: 1px solid rgba(20,33,61,0.1);
-          border-radius: 8px;
-          color: #14213d;
-          font-family: 'Space Grotesk', sans-serif;
+        #Contact .ct--label {
           font-size: 14px;
-          padding: 11px 14px;
-          outline: none;
-          transition: border-color 0.2s ease, background 0.2s ease;
+          font-weight: 600;
+        }
+
+        #Contact .ct--optional {
+          font-weight: 400;
+          color: var(--muted);
+        }
+
+        #Contact .ct--input,
+        #Contact .ct--select,
+        #Contact .ct--textarea {
           width: 100%;
-          box-sizing: border-box;
+          background: var(--paper);
+          border: 1px solid var(--line);
+          border-radius: 4px;
+          color: var(--ink);
+          font-family: inherit;
+          font-size: 15px;
+          padding: 13px 14px;
+          outline: none;
           appearance: none;
+          transition: border-color 0.2s ease, background 0.2s ease;
         }
 
-        .cmc-form--input:focus,
-        .cmc-form--select:focus,
-        .cmc-form--textarea:focus {
+        #Contact .ct--input:focus,
+        #Contact .ct--select:focus,
+        #Contact .ct--textarea:focus {
           background: #ffffff;
-          border-color: #1f9d63;
+          border-color: var(--ink);
+          box-shadow: 0 0 0 3px rgba(255, 90, 71, 0.35);
         }
 
-        .cmc-form--input::placeholder,
-        .cmc-form--textarea::placeholder {
-          color: rgba(20,33,61,0.3);
-        }
+        #Contact .ct--input::placeholder,
+        #Contact .ct--textarea::placeholder { color: #8b94a6; }
 
-        .cmc-form--select {
+        #Contact .ct--select {
           cursor: pointer;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3E%3Cpath fill='rgba(20,33,61,0.4)' d='M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z'/%3E%3C/svg%3E");
+          padding-right: 40px;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3E%3Cpath fill='%230e1a2b' d='M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z'/%3E%3C/svg%3E");
           background-repeat: no-repeat;
           background-position: right 14px center;
-          padding-right: 36px;
         }
 
-        .cmc-form--textarea {
+        #Contact .ct--textarea {
           resize: vertical;
-          min-height: 130px;
-          line-height: 1.7;
+          min-height: 140px;
+          line-height: 1.65;
         }
 
-        .cmc-form--submit--row {
+        #Contact .ct--actions {
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          gap: 16px;
+          gap: 18px;
           flex-wrap: wrap;
           padding-top: 4px;
         }
 
-        .cmc-form--submit--btn {
+        #Contact .ct--submit {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
-          background: #1f9d63;
+          min-width: 170px;
+          background: var(--coral);
           color: #ffffff;
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
+          font-family: inherit;
+          font-size: 15px;
           font-weight: 600;
-          padding: 13px 28px;
-          border-radius: 40px;
-          border: none;
+          padding: 15px 28px;
+          border: 2px solid var(--coral);
+          border-radius: 4px;
           cursor: pointer;
-          transition: background 0.2s ease, transform 0.15s ease;
+          transition: background 0.2s ease, transform 0.2s ease;
         }
 
-        .cmc-form--submit--btn:hover:not(:disabled) {
-          background: #178a54;
-          transform: translateY(-1px);
+        #Contact .ct--submit:hover:not(:disabled) {
+          background: #e84634;
+          border-color: #e84634;
+          transform: translateY(-2px);
         }
 
-        .cmc-form--submit--btn:disabled {
-          opacity: 0.6;
+        #Contact .ct--submit:disabled {
+          opacity: 0.65;
           cursor: not-allowed;
         }
 
-        .cmc-form--clear--btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
+        #Contact .ct--clear {
           background: transparent;
-          color: rgba(20,33,61,0.45);
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 13px;
+          color: var(--muted);
+          font-family: inherit;
+          font-size: 15px;
           font-weight: 500;
-          padding: 13px 20px;
-          border: 1px solid rgba(20,33,61,0.12);
-          border-radius: 40px;
+          padding: 15px 4px;
+          border: 0;
+          border-bottom: 2px solid transparent;
           cursor: pointer;
-          transition: border-color 0.2s ease, color 0.2s ease;
+          transition: color 0.2s ease, border-color 0.2s ease;
         }
 
-        .cmc-form--clear--btn:hover {
-          border-color: rgba(20,33,61,0.25);
-          color: #14213d;
+        #Contact .ct--clear:hover {
+          color: var(--ink);
+          border-bottom-color: var(--coral);
         }
 
-        .cmc-form--note {
-          font-size: 12px;
-          color: rgba(20,33,61,0.35);
-        }
-
-        .cmc-spinner {
-          width: 14px;
-          height: 14px;
-          border: 2px solid rgba(255,255,255,0.4);
+        #Contact .ct--spinner {
+          width: 15px;
+          height: 15px;
+          border: 2px solid rgba(255, 255, 255, 0.4);
           border-top-color: #ffffff;
           border-radius: 50%;
-          animation: spin 0.7s linear infinite;
+          animation: ctSpin 0.7s linear infinite;
           flex-shrink: 0;
         }
 
-        @keyframes spin {
-          to { transform: rotate(360deg); }
+        @keyframes ctSpin { to { transform: rotate(360deg); } }
+
+        #Contact a:focus-visible,
+        #Contact button:focus-visible {
+          outline: 3px solid var(--coral);
+          outline-offset: 3px;
         }
 
-        /* ── FOOTER — simple, centered, matches Figma ── */
-        .cmc-contact--footer {
-          border-top: 1px solid rgba(20,33,61,0.08);
-          padding: 40px 24px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
+        /* Footer */
+        #Contact .ct--footer {
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 28px 0 36px;
         }
 
-        .cmc-footer--socials {
-          display: flex;
-          gap: 14px;
-        }
-
-        .cmc-footer--social--link {
-          width: 36px;
-          height: 36px;
-          border-radius: 8px;
-          border: 1px solid rgba(20,33,61,0.1);
+        #Contact .ct--footer--inner {
+          max-width: 1240px;
+          margin: 0 auto;
+          padding: 0 48px;
           display: flex;
           align-items: center;
-          justify-content: center;
-          color: rgba(20,33,61,0.5);
+          justify-content: space-between;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        #Contact .ct--copy {
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0;
+        }
+
+        #Contact .ct--socials {
+          display: flex;
+          gap: 28px;
+          flex-wrap: wrap;
+        }
+
+        #Contact .ct--socials a {
           font-size: 15px;
+          font-weight: 500;
+          color: #ffffff;
           text-decoration: none;
-          transition: border-color 0.2s ease, color 0.2s ease;
+          padding-bottom: 3px;
+          border-bottom: 2px solid transparent;
+          transition: border-color 0.2s ease;
         }
 
-        .cmc-footer--social--link:hover {
-          border-color: #1f9d63;
-          color: #1f9d63;
-        }
+        #Contact .ct--socials a:hover { border-bottom-color: var(--coral); }
 
-        .cmc-footer--copy {
-          font-size: 12px;
-          color: rgba(20,33,61,0.4);
-          text-align: center;
-        }
-
+        /* Tablet */
         @media (max-width: 900px) {
-          .cmc-contact--body {
+          #Contact { padding-top: 76px; }
+          #Contact .ct--inner,
+          #Contact .ct--footer--inner { padding: 0 28px; }
+          #Contact .ct--headline { margin-bottom: 48px; }
+
+          #Contact .ct--grid {
             grid-template-columns: 1fr;
-            gap: 40px;
-            padding: 56px 24px;
+            gap: 48px;
+            padding-bottom: 72px;
           }
-          .cmc-contact--info { position: static; }
-          .contact--banner { padding: 48px 24px; }
-          .cmc-cmc-contact--form--wrap { padding: 24px 20px; }
-          .cmc-form--row { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 480px) {
-          .cmc-form--submit--row {
-            flex-direction: column;
-            align-items: stretch;
-          }
-          .cmc-form--submit--row > div {
-            flex-direction: column;
-          }
-          .cmc-form--submit--btn,
-          .cmc-form--clear--btn {
-            width: 100%;
-            justify-content: center;
-          }
-          .cmc-form--note {
-            text-align: center;
+        /* Mobile */
+        @media (max-width: 520px) {
+          #Contact { padding-top: 56px; }
+          #Contact .ct--inner,
+          #Contact .ct--footer--inner { padding: 0 20px; }
+          #Contact .ct--text { font-size: 16px; }
+          #Contact .ct--detail { grid-template-columns: 1fr; gap: 4px; }
+          #Contact .ct--panel { padding: 26px 20px; }
+          #Contact .ct--row { grid-template-columns: 1fr; }
+          #Contact .ct--actions { flex-direction: column; align-items: stretch; gap: 8px; }
+          #Contact .ct--submit { width: 100%; }
+          #Contact .ct--clear { text-align: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          #Contact *,
+          #Contact *::before,
+          #Contact *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
           }
         }
       `}</style>
 
-      <section id="Contact" ref={sectionRef}>
+      <section id="Contact" aria-labelledby="contact-heading">
+        <div className="ct--inner">
+          <h2 id="contact-heading" className="ct--headline">
+            Have a system that needs fixing? Tell me about it.
+          </h2>
 
-        {/* ── BODY: info + form ── */}
-        <div className="cmc-contact--body">
+          <div className="ct--grid">
+            {/* Left: details */}
+            <div>
+              <p className="ct--text">
+                Based in Lagos, Nigeria, and working with clients globally.
+                Whether you need a CRM or call center implementation, workflow
+                automation, or a full-stack build, I'm ready to help.
+              </p>
 
-          <div className="cmc-contact--info">
-            <h2 className="cmc-contact--info--headline">
-              Let's Work <span>Together</span>
-            </h2>
-            <p className="cmc-contact--info--text">
-              Based in Lagos, Nigeria — working with clients globally. Whether you
-              need a CRM or call center implementation, workflow automation, or a
-              full-stack build, I'm ready to help.
-            </p>
+              <dl className="ct--details">
+                <div className="ct--detail">
+                  <dt>Email</dt>
+                  <dd>
+                    <a href="mailto:olawuyiboluwatife2@gmail.com">
+                      olawuyiboluwatife2@gmail.com
+                    </a>
+                  </dd>
+                </div>
 
-            <div className="cmc-contact--details">
-              <div className="cmc-contact--detail--row">
-                <div className="cmc-detail--icon--box">✉</div>
-                <div className="cmc-detail--text--col">
-                  <span className="cmc-detail--label">Email</span>
-                  <span className="cmc-detail--value">
-                    <a href="mailto:olawuyiboluwatife2@gmail.com">olawuyiboluwatife2@gmail.com</a>
-                  </span>
+                <div className="ct--detail">
+                  <dt>Location</dt>
+                  <dd>Lagos, Nigeria. Remote worldwide.</dd>
                 </div>
-              </div>
-              <div className="cmc-contact--detail--row">
-                <div className="cmc-detail--icon--box">📍</div>
-                <div className="cmc-detail--text--col">
-                  <span className="cmc-detail--label">Location</span>
-                  <span className="cmc-detail--value">Lagos, Nigeria · Remote Worldwide</span>
+
+                <div className="ct--detail">
+                  <dt>Response time</dt>
+                  <dd>Within 24 hours</dd>
                 </div>
-              </div>
-              <div className="cmc-contact--detail--row">
-                <div className="cmc-detail--icon--box">🕐</div>
-                <div className="cmc-detail--text--col">
-                  <span className="cmc-detail--label">Response Time</span>
-                  <span className="cmc-detail--value">Within 24 hours</span>
+
+                <div className="ct--detail">
+                  <dt>Status</dt>
+                  <dd>
+                    <span className="ct--available">
+                      Available for new projects
+                    </span>
+                  </dd>
                 </div>
-              </div>
-              <div className="cmc-contact--detail--row">
-                <div className="cmc-detail--icon--box">⚡</div>
-                <div className="cmc-detail--text--col">
-                  <span className="cmc-detail--label">Status</span>
-                  <span className="cmc-detail--value cmc-online">
-                    <span className="cmc-online--dot"></span>
-                    Available for new projects
-                  </span>
-                </div>
-              </div>
+              </dl>
             </div>
 
-            <div className="cmc-contact--socials">
-              <a href="https://github.com/tifewalker" className="cmc-contact--social--btn" aria-label="GitHub">
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="cmc-contact--social--btn" aria-label="LinkedIn">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a href="https://www.instagram.com/im_tifewalker" className="cmc-contact--social--btn" aria-label="Instagram" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href="https://x.com/tife_d_walker?s=21" className="cmc-contact--social--btn" aria-label="Twitter">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </div>
-          </div>
+            {/* Right: form */}
+            <div className="ct--panel">
+              <h3 className="ct--panel--title">Send a message</h3>
 
-          <div className="cmc-contact--form--wrap">
-            <span className="cmc-form--section--label">Send a Message</span>
+              <div aria-live="polite">
+                {submitStatus === "success" && (
+                  <div className="ct--status success">
+                    <strong>Message sent.</strong>
+                    <p>I'll get back to you within 24 hours.</p>
+                  </div>
+                )}
 
-            {submitStatus === "success" && (
-              <div className="cmc-form--status cmc-success">
-                <span className="cmc-form--status--icon">✓</span>
-                <div>
-                  <strong>Message sent!</strong>
-                  <p>I'll get back to you within 24 hours.</p>
-                </div>
-              </div>
-            )}
-
-            {submitStatus === "error" && (
-              <div className="cmc-form--status cmc-error">
-                <span className="cmc-form--status--icon">!</span>
-                <div>
-                  <strong>Something went wrong.</strong>
-                  <p>Please email me directly at olawuyiboluwatife2@gmail.com</p>
-                </div>
-              </div>
-            )}
-
-            <form ref={form} className="cmc-contact--form" onSubmit={sendEmail}>
-              <input type="hidden" name="access_key" value="e8a5aacc-845f-454b-a837-22109e82be00" />
-              <input type="hidden" name="subject" value="New message from portfolio site" />
-              <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
-              <div className="cmc-form--row">
-                <div className="cmc-form--group">
-                  <label className="cmc-form--label" htmlFor="first-name">
-                    First Name <span className="cmc-form--required">*</span>
-                  </label>
-                  <input type="text" id="first-name" name="first-name" className="cmc-form--input" placeholder="John" required />
-                </div>
-                <div className="cmc-form--group">
-                  <label className="cmc-form--label" htmlFor="last-name">
-                    Last Name <span className="cmc-form--required">*</span>
-                  </label>
-                  <input type="text" id="last-name" name="last-name" className="cmc-form--input" placeholder="Doe" required />
-                </div>
+                {submitStatus === "error" && (
+                  <div className="ct--status error">
+                    <strong>Something went wrong.</strong>
+                    <p>
+                      Please email me directly at
+                      olawuyiboluwatife2@gmail.com
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <div className="cmc-form--row">
-                <div className="cmc-form--group">
-                  <label className="cmc-form--label" htmlFor="email">
-                    Email <span className="cmc-form--required">*</span>
-                  </label>
-                  <input type="email" id="email" name="email" className="cmc-form--input" placeholder="john@company.com" required />
-                </div>
-                <div className="cmc-form--group">
-                  <label className="cmc-form--label" htmlFor="phone-number">Phone</label>
-                  <input type="tel" id="phone-number" name="phone-number" className="cmc-form--input" placeholder="+1 555 000 0000" />
-                </div>
-              </div>
-
-              <div className="cmc-form--group">
-                <label className="cmc-form--label" htmlFor="choose-topic">
-                  Project Type <span className="cmc-form--required">*</span>
-                </label>
-                <select id="choose-topic" name="choose-topic" className="cmc-form--select" required>
-                  <option value="">Select a service…</option>
-                  <option value="crm">CRM & Business Systems (Zoho)</option>
-                  <option value="callcenter">Call Center Solutions (HoduCC)</option>
-                  <option value="automation">Workflow Automation & Integrations</option>
-                  <option value="fullstack">Full-Stack Development (MERN)</option>
-                  <option value="mobile">Mobile App Development</option>
-                  <option value="consulting">Technical Consulting</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="cmc-form--group">
-                <label className="cmc-form--label" htmlFor="message">
-                  Project Details <span className="cmc-form--required">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="cmc-form--textarea"
-                  placeholder="Tell me about your project — scope, timeline, budget, and any specific requirements…"
-                  required
+              <form ref={form} className="ct--form" onSubmit={sendEmail}>
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="e8a5aacc-845f-454b-a837-22109e82be00"
                 />
-              </div>
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New message from portfolio site"
+                />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
-              <div className="cmc-form--submit--row">
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <button type="submit" className="cmc-form--submit--btn" disabled={isSubmitting}>
+                <div className="ct--row">
+                  <div className="ct--group">
+                    <label className="ct--label" htmlFor="first-name">
+                      First name
+                    </label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      className="ct--input"
+                      placeholder="John"
+                      required
+                    />
+                  </div>
+
+                  <div className="ct--group">
+                    <label className="ct--label" htmlFor="last-name">
+                      Last name
+                    </label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      className="ct--input"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="ct--row">
+                  <div className="ct--group">
+                    <label className="ct--label" htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="ct--input"
+                      placeholder="john@company.com"
+                      required
+                    />
+                  </div>
+
+                  <div className="ct--group">
+                    <label className="ct--label" htmlFor="phone-number">
+                      Phone <span className="ct--optional">(optional)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone-number"
+                      name="phone-number"
+                      className="ct--input"
+                      placeholder="+1 555 000 0000"
+                    />
+                  </div>
+                </div>
+
+                <div className="ct--group">
+                  <label className="ct--label" htmlFor="choose-topic">
+                    What do you need help with?
+                  </label>
+                  <select
+                    id="choose-topic"
+                    name="choose-topic"
+                    className="ct--select"
+                    required
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Choose a service
+                    </option>
+                    <option value="crm">CRM and Business Systems (Zoho)</option>
+                    <option value="callcenter">Call Center Solutions (HoduCC)</option>
+                    <option value="automation">Workflow Automation and Integrations</option>
+                    <option value="fullstack">Full-Stack Development (MERN)</option>
+                    <option value="mobile">Mobile App Development</option>
+                    <option value="consulting">Technical Consulting</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div className="ct--group">
+                  <label className="ct--label" htmlFor="message">
+                    Project details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="ct--textarea"
+                    placeholder="Tell me about your project: scope, timeline, budget and any specific requirements."
+                    required
+                  />
+                </div>
+
+                <div className="ct--actions">
+                  <button
+                    type="submit"
+                    className="ct--submit"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
-                      <><div className="cmc-spinner"></div> Sending…</>
+                      <>
+                        <span className="ct--spinner" aria-hidden="true" />
+                        Sending
+                      </>
                     ) : (
-                      <>Send Message ↗</>
+                      "Send message"
                     )}
                   </button>
-                  <button type="button" className="cmc-form--clear--btn" onClick={() => form.current?.reset()}>
-                    Clear
+
+                  <button
+                    type="button"
+                    className="ct--clear"
+                    onClick={() => form.current?.reset()}
+                  >
+                    Clear form
                   </button>
                 </div>
-                <span className="cmc-form--note">Replies within 24 hrs</span>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
 
-        {/* ── FOOTER (matches Figma: icons + copyright, nothing else) ── */}
-        <div className="cmc-contact--footer">
-          <div className="cmc-footer--socials">
-            <a href="https://github.com/tifewalker" className="cmc-footer--social--link" aria-label="GitHub">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a href="https://www.linkedin.com/in/olawuyi-boluwatife-3088632b8/" className="cmc-footer--social--link" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="https://www.instagram.com/im_tifewalker" className="cmc-footer--social--link" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://x.com/tife_d_walker?s=21" className="cmc-footer--social--link" aria-label="Twitter">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-          </div>
-          <p className="cmc-footer--copy">© {new Date().getFullYear()} Boluwatife Olawuyi. All rights reserved.</p>
-        </div>
+        {/* Footer */}
+        <div className="ct--footer">
+          <div className="ct--footer--inner">
+            <p className="ct--copy">
+              © {new Date().getFullYear()} Boluwatife Olawuyi. All rights
+              reserved.
+            </p>
 
+            <nav className="ct--socials" aria-label="Social links">
+              {SOCIALS.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {social.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
       </section>
     </>
   );
