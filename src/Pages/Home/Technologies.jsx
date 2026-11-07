@@ -192,7 +192,7 @@ export default function Technologies() {
           <div className="tech--marquee--track">
             {loopList.map((tech, i) => (
               <div key={`${tech.name}-${i}`} className="tech--logo--cell">
-                <img src={tech.src} alt={tech.name} className="tech--logo--img" />
+                <img src={tech.src} alt={tech.name} className="tech--logo--img" loading="lazy" decoding="async" />
                 <span className="tech--logo--name">{tech.name}</span>
               </div>
             ))}

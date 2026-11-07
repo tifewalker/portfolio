@@ -305,7 +305,7 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="./img/my resume.pdf" target="_blank" rel="noreferrer" className="footer--link">
+                  <a href="/img/BoluwatifeOlawuyi_CV.pdf" target="_blank" rel="noreferrer" className="footer--link">
                     Download CV
                   </a>
                 </li>

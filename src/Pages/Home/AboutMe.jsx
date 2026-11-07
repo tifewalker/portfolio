@@ -576,7 +576,7 @@ export default function AboutMe() {
 </p>
 
               <a
-                href="./img/my resume.pdf"
+                href="/img/BoluwatifeOlawuyi_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about--resume--btn"
@@ -645,7 +645,7 @@ export default function AboutMe() {
             {/* ── RIGHT SIDEBAR ── */}
             <div className="about--sidebar">
               <div className="about--photo--frame">
-                <img src="./img/about-me.jpg" alt="Boluwatife Olawuyi" />
+                <img src="/img/optimized/about-me.webp" alt="Boluwatife Olawuyi" loading="lazy" decoding="async" width="1200" height="800" />
                 <div className="about--name--tag">
                   <h3>Boluwatife Olawuyi</h3>
                   <p>Application Engineer · Lagos, NG</p>

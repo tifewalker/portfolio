@@ -1,4 +1,5 @@
 import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -395,9 +396,7 @@ export default function HeroSection() {
             <Link to="MyPortfolio" spy smooth offset={-70} duration={500}>
               Works
             </Link>
-            <Link to="AboutME" spy smooth offset={-70} duration={500}>
-              About
-            </Link>
+            <RouterLink to="/articles">Articles</RouterLink>
             <Link to="Contact" spy smooth offset={-70} duration={500}>
               Contact
             </Link>
@@ -417,7 +416,7 @@ export default function HeroSection() {
             <p className="hero--description">
               CRM platforms, API integrations, AI agents and automated
               workflows that remove manual work and fix real operational
-              problems. I have 5+ years across application engineering,
+              problems. I have 5+ years experience across application engineering,
               backend development and business process automation.
             </p>
 
@@ -440,7 +439,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                to="CaseStudies"
+                to="MyPortfolio"
                 spy
                 smooth
                 offset={-70}
@@ -451,8 +450,8 @@ export default function HeroSection() {
               </Link>
 
               <a
-                href="/img/Boluwatife_Olawuyi_ApplicationEngineer_CV.pdf"
-                download="Boluwatife_Olawuyi_ApplicationEngineer_CV.pdf"
+                href="/img/BoluwatifeOlawuyi_CV.pdf"
+                download="BoluwatifeOlawuyi_CV.pdf"
                 className="hero--cta--link"
               >
                 Download resume
@@ -464,8 +463,10 @@ export default function HeroSection() {
           <div className="hero--photo--wrap">
             <div className="hero--photo--frame">
               <img
-                src="./img/hero_img.jpeg"
-                alt="Boluwatife Olawuyi, Application Engineer and AI Automation Specialist"
+                src="/img/hero_img.jpeg"
+                alt="Boluwatife Olawuyi, Application Engineer, System Analyst and AI Automation Specialist"
+                width="927"
+                height="1058"
                 fetchPriority="high"
               />
             </div>

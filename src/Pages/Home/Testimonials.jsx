@@ -7,7 +7,7 @@ const CERTIFICATIONS = [
     issuer: "Google / Coursera",
     year: "2023",
     category: "IT & Infrastructure",
-    src: "./img/cert1.png",
+    src: "/img/optimized/cert1.webp",
     color: "#4285F4",
   },
   {
@@ -16,7 +16,7 @@ const CERTIFICATIONS = [
     issuer: "freeCodeCamp",
     year: "2022",
     category: "Frontend",
-    src: "./img/cert2.png",
+    src: "/img/optimized/cert2.webp",
     color: "#0A0A23",
   },
   {
@@ -25,7 +25,7 @@ const CERTIFICATIONS = [
     issuer: "freeCodeCamp",
     year: "2022",
     category: "Frontend",
-    src: "./img/cert3.png",
+    src: "/img/optimized/cert3.webp",
     color: "#0A0A23",
   },
   {
@@ -34,7 +34,7 @@ const CERTIFICATIONS = [
     issuer: "Coursera",
     year: "2023",
     category: "CMS",
-    src: "./img/cert4.png",
+    src: "/img/optimized/cert4.webp",
     color: "#0056D2",
   },
   {
@@ -43,7 +43,7 @@ const CERTIFICATIONS = [
     issuer: "Udemy",
     year: "2024",
     category: "Frontend",
-    src: "./img/cert5.png",
+    src: "/img/optimized/cert5.webp",
     color: "#A435F0",
   },
   {
@@ -561,7 +561,7 @@ export default function Testimonial() {
               <div key={cert.id} className="cert--card">
                 {cert.src ? (
                   <div className="cert--img--wrap">
-                    <img src={cert.src} alt={cert.title} />
+                    <img src={cert.src} alt={cert.title} loading="lazy" decoding="async" />
                     <div className="cert--img--overlay">
                       <a
                         href={cert.src}
