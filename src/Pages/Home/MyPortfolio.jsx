@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { scroller } from "react-scroll";
+import { responsive, thumbnail } from "../../utils/images";
 
 /*
   Case study content.
@@ -216,8 +217,6 @@ const PROJECTS = [
     title: "A Nigerian Financial Services Company: Unified CRM and Support",
     tag: "CRM and automation",
     src: "/img/optimized/zohocrmplus.webp",
-    width: 1600,
-    height: 752,
     link: null,
     caseStudy: "crm",
     description:
@@ -227,8 +226,6 @@ const PROJECTS = [
     title: "A Nigerian Microfinance Bank: CRM and Call Center Setup",
     tag: "Call center and CRM",
     src: "/img/optimized/incoming-call-crm.webp",
-    width: 1600,
-    height: 782,
     link: null,
     caseStudy: "callcentre",
     description:
@@ -238,8 +235,6 @@ const PROJECTS = [
     title: "XPay: Payment and Transaction Management System",
     tag: "Lead engineer, web and mobile",
     src: "/img/optimized/xpay.webp",
-    width: 1200,
-    height: 1642,
     link: "https://app.xpay.ng/",
     playStoreLink: null,
     description:
@@ -249,8 +244,6 @@ const PROJECTS = [
     title: "KONECT Worksuite: Full-Stack CRM and Business Platform",
     tag: "Founder, MERN stack",
     src: "/img/optimized/konect.webp",
-    width: 1600,
-    height: 1018,
     link: "https://konectworksuite.com/",
     description:
       "Founded and built KONECT Worksuite from the ground up. It is a multi-module business platform covering CRM, Help Desk, Live Chat and Voice (SalesIQ), Email Campaigns, Project Management, Invoices, Workflows, and Analytics, built on the MERN stack. Designed to be leaner and more tightly integrated than existing multi-module SaaS platforms, targeting the Nigerian SME market first, priced in Naira, with a roadmap to expand across Africa and internationally.",
@@ -259,8 +252,6 @@ const PROJECTS = [
     title: "SecureLoan: Loan Processing and Risk Management System",
     tag: "Full stack, lead engineer",
     src: "/img/optimized/secureloan.webp",
-    width: 1600,
-    height: 773,
     link: "https://secure-loan-web.onrender.com/",
     description:
       "Designed and built SecureLoan to replace manual, spreadsheet-and-email-based loan processing with a centralized system: rule-based approval workflows, a borrower verification layer, end-to-end lifecycle tracking from application through disbursement to repayment, and dashboards for loan volume, approval rates, and risk indicators. It turned an inconsistent, error-prone process into one with standardized decisions and full visibility at every stage.",
@@ -271,35 +262,23 @@ const PROJECTS = [
 const WEBSITE_PROJECTS = [
   {
     title: "Gate Gold Fitness",
-    thumb: "/img/optimized/gategold.webp",
     src: "/img/optimized/gategold.webp",
     link: "https://gategoldfitness.com",
-    width: 1400,
-    height: 1400,
   },
   {
     title: "Creastech",
-    thumb: "/img/optimized/creastech.webp",
     src: "/img/optimized/creastech.webp",
     link: "https://creastech.com/",
-    width: 1400,
-    height: 1400,
   },
   {
     title: "Frictionless Lubricants",
-    thumb: "/img/optimized/frictionless.webp",
     src: "/img/optimized/frictionless.webp",
     link: "https://frictionlesslubricants.com/",
-    width: 1400,
-    height: 1400,
   },
   {
     title: "JoMabel Healthcare Foundation",
-    thumb: "/img/optimized/jomabel.webp",
     src: "/img/optimized/jomabel.webp",
     link: "https://jomabelhf.org/",
-    width: 1353,
-    height: 632,
   },
 ];
 
@@ -1115,10 +1094,11 @@ export default function MyPortfolio() {
                 >
                   {item.src ? (
                     <img
-                      src={item.src}
+                      {...responsive(
+                        item.src,
+                        "(max-width: 900px) 100vw, 640px"
+                      )}
                       alt={item.title}
-                      width={item.width || 1600}
-                      height={item.height || 1000}
                       loading={i === 0 ? "eager" : "lazy"}
                       decoding="async"
                     />
@@ -1207,10 +1187,10 @@ export default function MyPortfolio() {
                 >
                   <span className="pf--site--img">
                     <img
-                      src={site.thumb}
-                      alt={site.title}
-                      width={site.width || 1400}
-                      height={site.height || 1400}
+                      src={thumbnail(site.src)}
+                      alt=""
+                      width={responsive(site.src).width}
+                      height={responsive(site.src).height}
                       loading="lazy"
                       decoding="async"
                     />

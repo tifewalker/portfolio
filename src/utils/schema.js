@@ -72,7 +72,7 @@ export const getArticleSchema = (article) => {
     "@type": "BlogPosting",
     mainEntityOfPage: `${BASE_URL}/articles/${article.slug}`,
     headline: article.title,
-    description: article.excerpt,
+    description: article.seoDescription || article.excerpt,
     image: [image],
     datePublished: article.date,
     dateModified: article.updatedDate || article.date,

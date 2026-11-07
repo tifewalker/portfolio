@@ -245,10 +245,10 @@ for (const article of ARTICLES) {
   write(
     `articles/${article.slug}`,
     render({
-      title: `${article.title} | Boluwatife Olawuyi`,
-      description: article.excerpt,
+      title: article.seoTitle || `${article.title} | Boluwatife Olawuyi`,
+      description: article.seoDescription || article.excerpt,
       canonical: `${BASE_URL}/articles/${article.slug}`,
-      image: absolute(article.cover?.src),
+      image: absolute(article.shareImage || article.cover?.src),
       type: "article",
       schema: getArticleSchema(article),
       body: `<p><a href="/articles">All articles</a></p><h1>${esc(

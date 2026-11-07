@@ -40,6 +40,10 @@ const article = {
   date: "2026-11-05",
   author: "Boluwatife Olawuyi",
 
+  // Search results and link previews (optional; fall back to title and excerpt)
+  seoTitle: "From Business Requirements to Production | Boluwatife Olawuyi",
+  shareImage: "/img/og-konect.jpg",
+
   // Large image shown under the title
   cover: figure(
     "/img/optimized/konect.webp",

@@ -4,6 +4,7 @@ import ArticleShell from "./ArticleShell";
 import SEO from "../../components/SEO";
 import { getArticle, getRelatedArticles, formatDate } from "../../data/articles";
 import { getArticleSchema, BASE_URL } from "../../utils/schema";
+import { responsive } from "../../utils/images";
 
 const toId = (text) =>
   text
@@ -76,7 +77,10 @@ function Figure({ figure, eager = false }) {
   return (
     <figure className="ar--figure">
       <img
-        src={figure.src}
+        {...responsive(
+          figure.src,
+          eager ? "(max-width: 1120px) 100vw, 1080px" : "(max-width: 900px) 100vw, 720px"
+        )}
         alt={figure.alt}
         loading={eager ? "eager" : "lazy"}
         decoding="async"
@@ -228,11 +232,11 @@ export default function ArticlePage() {
   return (
     <ArticleShell>
       <SEO
-        title={`${article.title} | Boluwatife Olawuyi`}
-        description={article.excerpt}
+        title={article.seoTitle || `${article.title} | Boluwatife Olawuyi`}
+        description={article.seoDescription || article.excerpt}
         canonical={`${BASE_URL}/articles/${article.slug}`}
         ogType="article"
-        ogImage={absoluteUrl(article.cover?.src)}
+        ogImage={absoluteUrl(article.shareImage || article.cover?.src)}
         schema={getArticleSchema(article)}
       />
 

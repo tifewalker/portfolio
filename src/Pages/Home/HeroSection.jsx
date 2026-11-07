@@ -393,11 +393,11 @@ export default function HeroSection() {
           <span className="hero--logo">Boluwatife Olawuyi</span>
 
           <div className="hero--nav--links">
-            <Link to="MyPortfolio" spy smooth offset={-70} duration={500}>
+            <Link to="MyPortfolio" href="#MyPortfolio" spy smooth offset={-70} duration={500}>
               Works
             </Link>
             <RouterLink to="/articles">Articles</RouterLink>
-            <Link to="Contact" spy smooth offset={-70} duration={500}>
+            <Link to="Contact" href="#Contact" spy smooth offset={-70} duration={500}>
               Contact
             </Link>
           </div>
@@ -429,6 +429,7 @@ export default function HeroSection() {
             <div className="hero--cta--row">
               <Link
                 to="Contact"
+                href="#Contact"
                 spy
                 smooth
                 offset={-70}
@@ -440,6 +441,7 @@ export default function HeroSection() {
 
               <Link
                 to="MyPortfolio"
+                href="#MyPortfolio"
                 spy
                 smooth
                 offset={-70}

@@ -51,6 +51,12 @@ const article = {
   ),
   author: "Boluwatife Olawuyi",
 
+  // Search results and link previews (optional; fall back to title and excerpt)
+  seoTitle: "How to Build Omnichannel Customer Support | Boluwatife Olawuyi",
+  seoDescription:
+    "Multiple channels are not omnichannel support. How to connect every conversation to one system where it is assigned, tracked, escalated and resolved.",
+  shareImage: "/img/og-zohocrmplus.jpg",
+
   blocks: [
     p(
       "Many businesses now receive customer enquiries through WhatsApp, Instagram, Facebook, email, phone calls, and website live chat. Yet having multiple channels is not the same as having an omnichannel support operation."
