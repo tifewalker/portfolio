@@ -209,6 +209,118 @@ const CASE_STUDIES = {
       "Application Support",
     ],
   },
+
+  lms: {
+    headline:
+      "Rethinking the cost of virtual learning for 8,000 students",
+    meta: [
+      ["Industry", "Education"],
+      [
+        "Project type",
+        "Solution design, LMS development, live-learning delivery, cloud deployment",
+      ],
+      [
+        "Platforms",
+        "Custom LMS, YouTube Live, OBS Studio, Zoom, AWS Lightsail, Supabase, Caddy",
+      ],
+      [
+        "My role",
+        "Solution design, technical architecture, LMS customisation, infrastructure configuration and cloud deployment",
+      ],
+    ],
+    stats: [
+      { value: "8,000", label: "students, approximately" },
+      { value: "1", label: "professional Zoom subscription instead of thousands of seats" },
+      { value: "4", label: "core components integrated into one learning platform" },
+    ],
+    sections: [
+      {
+        title: "The challenge",
+        blocks: [
+          "An educational organisation with approximately 8,000 students faced a significant challenge in delivering large-scale online learning. It needed a reliable way to conduct live classes, support student participation, facilitate discussions and make learning resources accessible through a central platform.",
+          "Relying heavily on conventional video-conferencing platforms such as Zoom and Microsoft Teams introduced a major financial concern. Providing access at the required scale could mean substantial recurring subscription costs, making the existing approach difficult to sustain.",
+          "The organisation needed a digital learning environment capable of supporting:",
+          [
+            "Approximately 8,000 students.",
+            "Scheduled live teaching sessions.",
+            "Student participation through chat and class comments.",
+            "Access to learning materials and course information.",
+            "A centralised environment for students and administrators.",
+            "A manageable and predictable operating cost.",
+          ],
+          "The challenge was not simply to build another Learning Management System. It was to rethink how the organisation could deliver online education at scale without adopting an unnecessarily expensive technology stack.",
+        ],
+      },
+      {
+        title: "My approach",
+        blocks: [
+          "I approached the problem from an infrastructure and systems-design perspective: what if live video broadcasting was separated from student interaction and learning management?",
+          "Instead of making every student join a paid video-conferencing meeting, the model separated the live broadcast from the learning management and interaction experience. The architecture followed one principle: use specialised services for the jobs they already do well, and build the application layer that brings them together.",
+          "The live teaching workflow:",
+          [
+            "The instructor prepares the teaching session.",
+            "OBS Studio is used to manage the live production.",
+            "The session is broadcast through YouTube Live.",
+            "The live stream is embedded within the LMS.",
+            "Students access the session through the learning platform.",
+            "Students use the platform's interaction features to participate.",
+          ],
+        ],
+      },
+      {
+        title: "The solution",
+        blocks: [
+          "The solution combined four key components:",
+          {
+            items: [
+              {
+                title: "Centralised Learning Management System",
+                text: "A dedicated LMS served as the primary digital learning environment, where students could navigate their courses, follow scheduled learning activities and access resources from one central location, rather than a collection of disconnected tools.",
+              },
+              {
+                title: "YouTube Live for large-scale video delivery",
+                text: "Rather than requiring thousands of students to join individual Zoom or Teams meetings, live classes were broadcast through YouTube Live and embedded within the LMS, so students could watch without individual paid licences.",
+              },
+              {
+                title: "OBS Studio for live production",
+                text: "OBS Studio managed live production and stream management, including screen sharing, presentation materials and other visual sources, before delivering the broadcast to YouTube Live.",
+              },
+              {
+                title: "One professional Zoom subscription",
+                text: "A single professional Zoom subscription formed part of the live teaching setup, giving controlled access to professional video-conferencing capabilities without buying subscriptions for thousands of students.",
+              },
+              {
+                title: "Interaction around the stream",
+                text: "Live video alone does not create a learning environment. The LMS brought together embedded classes, student chat and class discussions, comments and questions during sessions, and course resources. The stream handled content delivery; the LMS provided the learning and interaction experience.",
+              },
+              {
+                title: "Platform infrastructure",
+                text: "The LMS frontend and backend were deployed on AWS Lightsail, with Supabase providing the database and storage. Caddy handled HTTPS, domain routing and reverse proxying, with the API managed as a system service: a practical cloud foundation without unnecessary complexity.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    result: [
+      "The most important outcome was the change in the organisation's cost model. Instead of treating every student as a potential paid video-conferencing seat, the solution used a broadcast-based delivery model for large classes. This reduced dependence on per-user subscriptions, gave approximately 8,000 students a central learning environment, reused accessible broadcasting technologies, and created a more manageable operating model with room to expand over time.",
+      "The organisation did not need thousands of simultaneous interactive video-conferencing seats. It needed a reliable way to deliver teaching to thousands of students while retaining the ability to communicate and participate. By separating video delivery from learning management and student interaction, the problem could be solved with a more cost-conscious architecture.",
+      "The project reinforced an important principle in systems engineering: build for the actual problem, not for the complexity of the tools available.",
+    ],
+    skills: [
+      "Next.js",
+      "Node.js",
+      "AWS Lightsail",
+      "Supabase",
+      "OBS Studio",
+      "YouTube Live",
+      "Zoom",
+      "Caddy",
+      "Linux",
+      "Cloud Deployment",
+      "Solution Architecture",
+    ],
+  },
 };
 
 // Main project data
@@ -230,6 +342,15 @@ const PROJECTS = [
     caseStudy: "callcentre",
     description:
       "Implemented Zoho CRM Plus alongside a full HoduCC call center setup, including IVR configuration, and connected the call center directly into CRM Plus, so agents handle calls from within the same CRM instead of switching between separate systems.",
+  },
+  {
+    title: "Crystal Innovation Hub: Live Learning at Scale for 8,000 Students",
+    tag: "Solution architecture and cloud",
+    src: "/img/optimized/live-class.webp",
+    link: "https://crystalinnovationhub.com.ng/",
+    caseStudy: "lms",
+    description:
+      "Designed and deployed a cost-conscious virtual learning platform for an educational organisation of about 8,000 students. Separated live video from learning management: classes are produced in OBS Studio, broadcast through YouTube Live and embedded in a custom LMS with chat and discussions, so one professional Zoom subscription replaces thousands of paid seats. Hosted on AWS Lightsail with Supabase and Caddy.",
   },
   {
     title: "XPay: Payment and Transaction Management System",

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Knowledge grounding workflow: customer question, retrieval from approved sources, cited AI response">
+<title>Knowledge grounding workflow: customer question, retrieval from approved sources, cited AI response</title>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#1E3A5F"/>
+  </marker>
+  <marker id="aht" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0D9488"/>
+  </marker>
+  <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0B1F3A" flood-opacity="0.08"/>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif">
+<rect x="80" y="64" width="6" height="34" rx="3" fill="#0D9488"/><text x="100" y="91" text-anchor="start" font-size="28" font-weight="700" fill="#0B1F3A">Knowledge grounding with citations</text>
+<rect x="80" y="230" width="240" height="170" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(180.0,273.0) scale(1.0)"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="200.0" y="339.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Question</text>
+<text x="200.0" y="365.0" text-anchor="middle" font-size="16" fill="#64748B">“What is your refund policy?”</text>
+<line x1="322" y1="315" x2="420" y2="315" stroke="#1E3A5F" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="422" y="230" width="220" height="170" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(512.0,273.0) scale(1.0)"><circle cx="17" cy="17" r="11" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 25 l10 10" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="532.0" y="339.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Retrieve</text>
+<text x="532.0" y="365.0" text-anchor="middle" font-size="16" fill="#64748B">relevant, scoped</text>
+<rect x="380" y="470" width="760" height="230" rx="22" fill="#F0FDFA" stroke="#0D9488" stroke-width="2" stroke-dasharray="10 8"/>
+<rect x="890.0" y="454" width="220" height="32" rx="16" fill="#CCFBF1"/><text x="1000" y="476" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">Approved sources only</text>
+<rect x="420" y="520" width="120" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(460.0,554.0) scale(1.0)"><path d="M9 4 h15 l8 8 v24 h-23z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4 v8 h8 M14 20 h12 M14 26 h12" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="480.0" y="620.0" text-anchor="middle" font-size="17" font-weight="600" fill="#0B1F3A">Policies</text>
+<rect x="562" y="520" width="120" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(602.0,554.0) scale(1.0)"><path d="M14 10 h20 M14 20 h20 M14 30 h20" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="10" r="1.8" fill="#0D9488"/><circle cx="7" cy="20" r="1.8" fill="#0D9488"/><circle cx="7" cy="30" r="1.8" fill="#0D9488"/></g>
+<text x="622.0" y="620.0" text-anchor="middle" font-size="17" font-weight="600" fill="#0B1F3A">FAQs</text>
+<rect x="704" y="520" width="120" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(744.0,554.0) scale(1.0)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20 h30 M20 5 c-8 9 -8 21 0 30 M20 5 c8 9 8 21 0 30" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="764.0" y="620.0" text-anchor="middle" font-size="17" font-weight="600" fill="#0B1F3A">Website</text>
+<rect x="846" y="520" width="120" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(886.0,554.0) scale(1.0)"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="906.0" y="620.0" text-anchor="middle" font-size="17" font-weight="600" fill="#0B1F3A">History</text>
+<rect x="988" y="520" width="120" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(1028.0,554.0) scale(1.0)"><ellipse cx="20" cy="9" rx="13" ry="5" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 9 v22 c0 3 6 5 13 5 s13 -2 13 -5 v-22 M7 20 c0 3 6 5 13 5 s13 -2 13 -5" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1048.0" y="620.0" text-anchor="middle" font-size="17" font-weight="600" fill="#0B1F3A">Integrations</text>
+<path d="M532 518 V 403" fill="none" stroke="#0D9488" stroke-width="3" stroke-linejoin="round" marker-end="url(#aht)"/>
+<line x1="644" y1="315" x2="740" y2="315" stroke="#1E3A5F" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="742" y="230" width="220" height="170" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(832.0,273.0) scale(1.0)"><path d="M9 4 h15 l8 8 v24 h-23z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4 v8 h8 M14 20 h12 M14 26 h12" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="852.0" y="339.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Context</text>
+<text x="852.0" y="365.0" text-anchor="middle" font-size="16" fill="#64748B">ranked passages</text>
+<line x1="964" y1="315" x2="1050" y2="315" stroke="#1E3A5F" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="1052" y="200" width="460" height="230" rx="20" fill="#0B1F3A" filter="url(#sh)"/>
+<g transform="translate(1080.0,225.0) scale(1.0)"><path d="M20 4 l4 12 l12 4 l-12 4 l-4 12 l-4 -12 l-12 -4 l12 -4z" fill="none" stroke="#CCFBF1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1135" y="252" text-anchor="start" font-size="22" font-weight="700" fill="#FFFFFF">Cited answer</text>
+<rect x="1090" y="285" width="380" height="10" rx="5" fill="#1E3A5F"/>
+<rect x="1090" y="311" width="340" height="10" rx="5" fill="#1E3A5F"/>
+<rect x="1090" y="337" width="360" height="10" rx="5" fill="#1E3A5F"/>
+<rect x="1090" y="363" width="220" height="10" rx="5" fill="#1E3A5F"/>
+<rect x="1065.0" y="384" width="170" height="32" rx="16" fill="#CCFBF1"/><text x="1150" y="406" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">[1] Refund policy</text>
+<rect x="1290.0" y="384" width="100" height="32" rx="16" fill="#CCFBF1"/><text x="1340" y="406" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">[2] FAQ</text>
+<text x="800" y="780" text-anchor="middle" font-size="20" font-weight="500" fill="#64748B">AI interprets business knowledge. It does not invent business policy.</text>
+</g>
+</svg>

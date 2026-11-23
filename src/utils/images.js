@@ -18,6 +18,7 @@ const SIZES = {
   "/img/optimized/creastech.webp": [1400, 1400, 600],
   "/img/optimized/frictionless.webp": [1400, 1400, 600],
   "/img/optimized/jomabel.webp": [1353, 632, 600],
+  "/img/optimized/live-class.webp": [1600, 1200, 800],
 };
 
 const smallCopy = (src, w) => src.replace(/\.webp$/, `-${w}.webp`);

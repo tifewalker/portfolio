@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="AI support operations dashboard: escalations, approvals, knowledge gaps, usage and cost">
+<title>AI support operations dashboard: escalations, approvals, knowledge gaps, usage and cost</title>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#1E3A5F"/>
+  </marker>
+  <marker id="aht" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0D9488"/>
+  </marker>
+  <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0B1F3A" flood-opacity="0.08"/>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif">
+<rect x="80" y="64" width="6" height="34" rx="3" fill="#0D9488"/><text x="100" y="91" text-anchor="start" font-size="28" font-weight="700" fill="#0B1F3A">AI support operations</text>
+<rect x="80" y="130" width="1440" height="690" rx="26" fill="#F1F5F9"/>
+<rect x="80" y="130" width="90" height="690" rx="26" fill="#0B1F3A"/>
+<g transform="translate(109.0,184.0) scale(0.8)"><path d="M5 35 h30 M10 30 v-8 M18 30 v-16 M26 30 v-11 M34 30 v-20" fill="none" stroke="#CCFBF1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(109.0,264.0) scale(0.8)"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4z" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(109.0,344.0) scale(0.8)"><path d="M14 10 h20 M14 20 h20 M14 30 h20" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="10" r="1.8" fill="#7C93B5"/><circle cx="7" cy="20" r="1.8" fill="#7C93B5"/><circle cx="7" cy="30" r="1.8" fill="#7C93B5"/></g>
+<g transform="translate(109.0,424.0) scale(0.8)"><path d="M9 4 h15 l8 8 v24 h-23z" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4 v8 h8 M14 20 h12 M14 26 h12" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(109.0,504.0) scale(0.8)"><circle cx="20" cy="20" r="15" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 11 v18 M25 14 h-7 a3.5 3.5 0 0 0 0 7 h4 a3.5 3.5 0 0 1 0 7 h-8" fill="none" stroke="#7C93B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="200" y="160" width="238" height="150" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<g transform="translate(218.0,182.0) scale(0.8)"><path d="M20 5 l16 29 h-32z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15 v9" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="29" r="1.6" fill="#0D9488"/></g>
+<text x="260" y="205" text-anchor="start" font-size="17" font-weight="600" fill="#0B1F3A">Escalations</text>
+<polyline points="224,288 254,280 284,284 314,272 344,276 374,266 414,270" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="224" y="294" width="60" height="6" rx="3" fill="#CCFBF1"/>
+<rect x="460" y="160" width="238" height="150" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<g transform="translate(478.0,182.0) scale(0.8)"><path d="M14 10 h20 M14 20 h20 M14 30 h20" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="10" r="1.8" fill="#0D9488"/><circle cx="7" cy="20" r="1.8" fill="#0D9488"/><circle cx="7" cy="30" r="1.8" fill="#0D9488"/></g>
+<text x="520" y="205" text-anchor="start" font-size="17" font-weight="600" fill="#0B1F3A">Pending approvals</text>
+<polyline points="484,288 514,280 544,284 574,272 604,276 634,266 674,270" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="484" y="294" width="78" height="6" rx="3" fill="#CCFBF1"/>
+<rect x="720" y="160" width="238" height="150" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<g transform="translate(738.0,182.0) scale(0.8)"><path d="M9 4 h15 l8 8 v24 h-23z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4 v8 h8 M14 20 h12 M14 26 h12" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="780" y="205" text-anchor="start" font-size="17" font-weight="600" fill="#0B1F3A">Knowledge gaps</text>
+<polyline points="744,288 774,280 804,284 834,272 864,276 894,266 934,270" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="744" y="294" width="96" height="6" rx="3" fill="#CCFBF1"/>
+<rect x="980" y="160" width="238" height="150" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<g transform="translate(998.0,182.0) scale(0.8)"><path d="M20 4 l4 12 l12 4 l-12 4 l-4 12 l-4 -12 l-12 -4 l12 -4z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1040" y="205" text-anchor="start" font-size="17" font-weight="600" fill="#0B1F3A">AI usage</text>
+<polyline points="1004,288 1034,280 1064,284 1094,272 1124,276 1154,266 1194,270" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1004" y="294" width="114" height="6" rx="3" fill="#CCFBF1"/>
+<rect x="1240" y="160" width="238" height="150" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<g transform="translate(1258.0,182.0) scale(0.8)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 11 v18 M25 14 h-7 a3.5 3.5 0 0 0 0 7 h4 a3.5 3.5 0 0 1 0 7 h-8" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1300" y="205" text-anchor="start" font-size="17" font-weight="600" fill="#0B1F3A">Cost vs budget</text>
+<polyline points="1264,288 1294,280 1324,284 1354,272 1384,276 1414,266 1454,270" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1264" y="294" width="132" height="6" rx="3" fill="#CCFBF1"/>
+<rect x="200" y="340" width="820" height="450" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<text x="230" y="382" text-anchor="start" font-size="19" font-weight="700" fill="#0B1F3A">Conversations by outcome</text>
+<rect x="760" y="364" width="14" height="14" rx="3" fill="#0D9488"/><text x="782" y="377" text-anchor="start" font-size="14" font-weight="500" fill="#64748B">resolved by AI</text>
+<rect x="900" y="364" width="14" height="14" rx="3" fill="#1E3A5F"/><text x="922" y="377" text-anchor="start" font-size="14" font-weight="500" fill="#64748B">escalated</text>
+<line x1="240" y1="430" x2="990" y2="430" stroke="#E2E8F0" stroke-width="1.5"/>
+<line x1="240" y1="505" x2="990" y2="505" stroke="#E2E8F0" stroke-width="1.5"/>
+<line x1="240" y1="580" x2="990" y2="580" stroke="#E2E8F0" stroke-width="1.5"/>
+<line x1="240" y1="655" x2="990" y2="655" stroke="#E2E8F0" stroke-width="1.5"/>
+<line x1="240" y1="730" x2="990" y2="730" stroke="#E2E8F0" stroke-width="1.5"/>
+<rect x="270" y="580" width="40" height="80" rx="4" fill="#0D9488"/>
+<rect x="270" y="660" width="40" height="70" rx="4" fill="#1E3A5F"/>
+<rect x="342" y="550" width="40" height="120" rx="4" fill="#0D9488"/>
+<rect x="342" y="670" width="40" height="60" rx="4" fill="#1E3A5F"/>
+<rect x="414" y="560" width="40" height="95" rx="4" fill="#0D9488"/>
+<rect x="414" y="655" width="40" height="75" rx="4" fill="#1E3A5F"/>
+<rect x="486" y="520" width="40" height="155" rx="4" fill="#0D9488"/>
+<rect x="486" y="675" width="40" height="55" rx="4" fill="#1E3A5F"/>
+<rect x="558" y="500" width="40" height="180" rx="4" fill="#0D9488"/>
+<rect x="558" y="680" width="40" height="50" rx="4" fill="#1E3A5F"/>
+<rect x="630" y="510" width="40" height="162" rx="4" fill="#0D9488"/>
+<rect x="630" y="672" width="40" height="58" rx="4" fill="#1E3A5F"/>
+<rect x="702" y="480" width="40" height="205" rx="4" fill="#0D9488"/>
+<rect x="702" y="685" width="40" height="45" rx="4" fill="#1E3A5F"/>
+<rect x="774" y="460" width="40" height="230" rx="4" fill="#0D9488"/>
+<rect x="774" y="690" width="40" height="40" rx="4" fill="#1E3A5F"/>
+<rect x="846" y="470" width="40" height="212" rx="4" fill="#0D9488"/>
+<rect x="846" y="682" width="40" height="48" rx="4" fill="#1E3A5F"/>
+<rect x="918" y="440" width="40" height="252" rx="4" fill="#0D9488"/>
+<rect x="918" y="692" width="40" height="38" rx="4" fill="#1E3A5F"/>
+<rect x="1045" y="340" width="455" height="450" rx="16" fill="#FFFFFF" filter="url(#sh)"/>
+<text x="1075" y="382" text-anchor="start" font-size="19" font-weight="700" fill="#0B1F3A">Approval and audit log</text>
+<g transform="translate(1076.0,424.0) scale(0.7)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 20 l5 5 l9 -10" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="1120" y="428" width="170" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="446" width="110" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="422" width="100" height="32" rx="16" fill="#CCFBF1"/><text x="1420" y="444" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">approved</text>
+<g transform="translate(1076.0,484.0) scale(0.7)"><path d="M14 10 h20 M14 20 h20 M14 30 h20" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="10" r="1.8" fill="#1E3A5F"/><circle cx="7" cy="20" r="1.8" fill="#1E3A5F"/><circle cx="7" cy="30" r="1.8" fill="#1E3A5F"/></g>
+<rect x="1120" y="488" width="145" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="506" width="90" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="482" width="100" height="32" rx="16" fill="#F1F5F9"/><text x="1420" y="504" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">pending</text>
+<g transform="translate(1076.0,544.0) scale(0.7)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 20 l5 5 l9 -10" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="1120" y="548" width="120" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="566" width="110" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="542" width="100" height="32" rx="16" fill="#CCFBF1"/><text x="1420" y="564" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">approved</text>
+<g transform="translate(1076.0,604.0) scale(0.7)"><circle cx="20" cy="20" r="15" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14 l12 12 M26 14 l-12 12" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="1120" y="608" width="170" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="626" width="90" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="602" width="100" height="32" rx="16" fill="#F1F5F9"/><text x="1420" y="624" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">rejected</text>
+<g transform="translate(1076.0,664.0) scale(0.7)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 20 l5 5 l9 -10" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="1120" y="668" width="145" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="686" width="110" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="662" width="100" height="32" rx="16" fill="#CCFBF1"/><text x="1420" y="684" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">approved</text>
+<g transform="translate(1076.0,724.0) scale(0.7)"><path d="M14 10 h20 M14 20 h20 M14 30 h20" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="10" r="1.8" fill="#1E3A5F"/><circle cx="7" cy="20" r="1.8" fill="#1E3A5F"/><circle cx="7" cy="30" r="1.8" fill="#1E3A5F"/></g>
+<rect x="1120" y="728" width="120" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="1120" y="746" width="90" height="8" rx="4" fill="#E2E8F0"/>
+<rect x="1370.0" y="722" width="100" height="32" rx="16" fill="#F1F5F9"/><text x="1420" y="744" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">pending</text>
+<text x="800" y="860" text-anchor="middle" font-size="18" font-weight="500" fill="#64748B">Illustrative layout: governance you can see, measure and act on.</text>
+</g>
+</svg>

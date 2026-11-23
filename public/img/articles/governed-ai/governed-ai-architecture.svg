@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Governed AI agent architecture for omnichannel customer support">
+<title>Governed AI agent architecture for omnichannel customer support</title>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#1E3A5F"/>
+  </marker>
+  <marker id="aht" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0D9488"/>
+  </marker>
+  <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0B1F3A" flood-opacity="0.08"/>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif">
+<rect x="80" y="64" width="6" height="34" rx="3" fill="#0D9488"/><text x="100" y="91" text-anchor="start" font-size="28" font-weight="700" fill="#0B1F3A">Governed AI agent architecture</text>
+<rect x="330" y="140" width="1190" height="560" rx="28" fill="#F0FDFA" stroke="#0D9488" stroke-width="2" stroke-dasharray="10 8"/>
+<rect x="1285.0" y="684" width="190" height="32" rx="16" fill="#CCFBF1"/><text x="1380" y="706" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">Tenant boundary</text>
+<rect x="80" y="170" width="190" height="80" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<text x="175.0" y="217.7" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A"></text>
+<g transform="translate(104.0,192.0) scale(0.9)"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="152" y="217" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">WhatsApp</text>
+<path d="M270 210 C 320 210, 330 420, 388 420" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah)"/>
+<rect x="80" y="272" width="190" height="80" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<text x="175.0" y="319.7" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A"></text>
+<g transform="translate(104.0,294.0) scale(0.9)"><rect x="5" y="5" width="30" height="30" rx="9" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="7" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="11" r="1.5" fill="#0D9488"/></g>
+<text x="152" y="319" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">Instagram</text>
+<path d="M270 312 C 320 312, 330 420, 388 420" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah)"/>
+<rect x="80" y="374" width="190" height="80" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<text x="175.0" y="421.7" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A"></text>
+<g transform="translate(104.0,396.0) scale(0.9)"><circle cx="20" cy="20" r="15" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20 h30 M20 5 c-8 9 -8 21 0 30 M20 5 c8 9 8 21 0 30" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="152" y="421" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">Web chat</text>
+<path d="M270 414 C 320 414, 330 420, 388 420" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah)"/>
+<rect x="80" y="476" width="190" height="80" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<text x="175.0" y="523.7" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A"></text>
+<g transform="translate(104.0,498.0) scale(0.9)"><rect x="4" y="9" width="32" height="22" rx="3" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 11 l15 11 l15 -11" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="152" y="523" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">Email</text>
+<path d="M270 516 C 320 516, 330 420, 388 420" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah)"/>
+<rect x="80" y="578" width="190" height="80" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<text x="175.0" y="625.7" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A"></text>
+<g transform="translate(104.0,600.0) scale(0.9)"><rect x="11" y="4" width="18" height="32" rx="4" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 30 h4" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="152" y="625" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">Social</text>
+<path d="M270 618 C 320 618, 330 420, 388 420" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah)"/>
+<text x="175" y="705" text-anchor="middle" font-size="17" font-weight="500" fill="#64748B">Channels</text>
+<rect x="390" y="330" width="220" height="180" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(480.0,378.0) scale(1.0)"><rect x="6" y="6" width="28" height="12" rx="3" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="22" width="28" height="12" rx="3" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.5" fill="#0D9488"/><circle cx="12" cy="28" r="1.5" fill="#0D9488"/></g>
+<text x="500.0" y="444.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Backend</text>
+<text x="500.0" y="470.0" text-anchor="middle" font-size="16" fill="#64748B">auth · context · rules</text>
+<line x1="612" y1="420" x2="690" y2="420" stroke="#1E3A5F" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="692" y="300" width="280" height="240" rx="20" fill="#0B1F3A" filter="url(#sh)"/>
+<g transform="translate(804.0,352.0) scale(1.4)"><path d="M20 4 l4 12 l12 4 l-12 4 l-4 12 l-4 -12 l-12 -4 l12 -4z" fill="none" stroke="#CCFBF1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="832" y="450" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF">AI orchestration</text>
+<text x="832" y="480" text-anchor="middle" font-size="16" font-weight="500" fill="#CCFBF1">model · context · tools</text>
+<rect x="1080" y="170" width="300" height="124" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(1210.0,190.0) scale(1.0)"><path d="M9 4 h15 l8 8 v24 h-23z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4 v8 h8 M14 20 h12 M14 26 h12" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1230.0" y="256.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Knowledge</text>
+<text x="1230.0" y="282.0" text-anchor="middle" font-size="16" fill="#64748B">approved sources</text>
+<path d="M972 420 C 1030 420, 1020 232, 1078 232" fill="none" stroke="#0D9488" stroke-width="3" stroke-linejoin="round" marker-end="url(#aht)"/>
+<rect x="1080" y="320" width="300" height="124" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(1210.0,340.0) scale(1.0)"><path d="M20 4 l14 5 v10 c0 9 -6 15 -14 18 c-8 -3 -14 -9 -14 -18 v-10z" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 20 l4 4 l8 -8" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1230.0" y="406.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Policy engine</text>
+<text x="1230.0" y="432.0" text-anchor="middle" font-size="16" fill="#64748B">permissions · limits</text>
+<path d="M972 420 C 1030 420, 1020 382, 1078 382" fill="none" stroke="#0D9488" stroke-width="3" stroke-linejoin="round" marker-end="url(#aht)"/>
+<rect x="1080" y="470" width="300" height="124" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#sh)"/>
+<g transform="translate(1210.0,490.0) scale(1.0)"><circle cx="20" cy="13" r="7" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 36 c0 -8 6 -13 13 -13 s13 5 13 13" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="1230.0" y="556.0" text-anchor="middle" font-size="22" font-weight="600" fill="#0B1F3A">Human review</text>
+<text x="1230.0" y="582.0" text-anchor="middle" font-size="16" fill="#64748B">escalation · approval</text>
+<path d="M972 420 C 1030 420, 1020 532, 1078 532" fill="none" stroke="#0D9488" stroke-width="3" stroke-linejoin="round" marker-end="url(#aht)"/>
+<rect x="390" y="610" width="990" height="64" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<g transform="translate(414.0,626.0) scale(0.8)"><path d="M3 20 c5 -9 11 -13 17 -13 s12 4 17 13 c-5 9 -11 13 -17 13 s-12 -4 -17 -13z" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="5" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="462" y="649" text-anchor="start" font-size="19" font-weight="600" fill="#0B1F3A">Audit, monitoring and cost control</text>
+<rect x="934.0" y="626" width="92" height="32" rx="16" fill="#F1F5F9"/><text x="980" y="648" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">logs</text>
+<rect x="1039.0" y="626" width="92" height="32" rx="16" fill="#F1F5F9"/><text x="1085" y="648" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">approvals</text>
+<rect x="1144.0" y="626" width="92" height="32" rx="16" fill="#F1F5F9"/><text x="1190" y="648" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">usage</text>
+<rect x="1249.0" y="626" width="92" height="32" rx="16" fill="#F1F5F9"/><text x="1295" y="648" text-anchor="middle" font-size="15" font-weight="600" fill="#1E3A5F">quality</text>
+<path d="M832 300 V 122 H 175 V 160" fill="none" stroke="#0D9488" stroke-width="3" stroke-dasharray="8 7" stroke-linejoin="round" marker-end="url(#aht)"/>
+<rect x="460.0" y="106" width="200" height="32" rx="16" fill="#CCFBF1"/><text x="560" y="128" text-anchor="middle" font-size="15" font-weight="600" fill="#0F766E">Grounded response</text>
+<text x="800" y="800" text-anchor="middle" font-size="20" font-weight="500" fill="#64748B">The model reasons; the backend decides what is allowed; people approve what matters.</text>
+</g>
+</svg>

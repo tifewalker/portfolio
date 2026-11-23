@@ -10,10 +10,12 @@
 
 import omnichannelCustomerSupportSystem from "./omnichannel-customer-support-system.js";
 import fromBusinessRequirementsToProduction from "./from-business-requirements-to-production.js";
+import secureGovernedAiAgents from "./secure-governed-ai-agents.js";
 
 const ALL = [
   omnichannelCustomerSupportSystem,
   fromBusinessRequirementsToProduction,
+  secureGovernedAiAgents,
   // add the next article here
 ];
 
